@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/4acdbd152b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="registration-form.css">
 </head>
 <body>
@@ -11,7 +12,6 @@
         <img src="#" alt="logo-img">
         <nav class="right">
             <a href="#">STORE</a>
-            <a href="#">COMMUNITY</a>
             <a href="#">ABOUT</a>
             <a href="#">SUPPORT</a>
         </nav>
@@ -21,11 +21,31 @@
         <section class="form-container">
             <h2>CREATE YOUR ACCOUNT</h2>
 
-            <label for="email">Email Address</label>
-            <input type="email" name="email" id="email-address" placeholder="Email Address">
+            <form id="loginForm" action="#" method="get">
 
-            <label for="confirm-email">Confirm your Email Address</label>
-            <input type="email" name="confirm-email" id="confirm-email" placeholder="Confirm your Eamil Address">
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Username">
+                    <div id="usernameError" class="error-message">Username is required!</div>
+                </div>
+            
+                <div>
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" id="email-address" placeholder="Email Address">
+                    <div id="emailError" class="error-message">Invalid email address!</div>
+                </div>
+
+                <div>
+                    <label for="confirm-email">Confirm your Email Address</label>
+                    <input type="email" name="confirm-email" id="confirm-email" placeholder="Confirm your Eamil Address">
+                    <div id="confirmEmailError" class="error-message">Emails do not match!</div>
+                </div>
+
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Your Password">
+                    <div id="passwordError" class="error-message">Password is not right!</div>
+                </div>
 
             <label for="select-country">Country of Residence</label>
             <select name="country" id="select-country">
@@ -62,13 +82,26 @@
                 <input type="checkbox" name="terms" id="agree-terms"> I am 13 years of age or older and agree to the terms of the <a href="#">Steam Subcriber Agreement</a> and the <a href="#">Valve Privacy Policy</a>.
             </div>
 
-            <button class="btn-submit">Continue</button>
+            <button class="btn-submit" type="submit">Continue</button>
+            </form>
 
         </section>
     </section>
 
     <section class="footer">
-        
+        <hr>
+        <p>© 2024 GameNexus Corporation. All rights reserved. All trademarks are property of their respective owners in the Kosova and other countries.</p>
+        <!-- <img class="logo-footer" src="#" alt="logo-img"> -->
+        <div class="links">
+        <a href="#">About</a>
+        <a href="#">Store</a>
+        <a href="#">Support</a>
+        <a href="#">Cookies</a>
+        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <hr>
     </section>
+    <script src="registration-form.js"></script>
 </body>
 </html>
