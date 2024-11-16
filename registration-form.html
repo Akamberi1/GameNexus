@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/4acdbd152b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="registration-form.css">
+</head>
+<body>
+    <header class="header">
+        <img src="#" alt="logo-img">
+        <nav class="right">
+            <a href="#">STORE</a>
+            <a href="#">ABOUT</a>
+            <a href="#">SUPPORT</a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <section class="form-container">
+            <h2>CREATE YOUR ACCOUNT</h2>
+
+            <form id="loginForm" action="#" method="get">
+
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Username">
+                    <div id="usernameError" class="error-message">Username is required!</div>
+                </div>
+            
+                <div>
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" id="email-address" placeholder="Email Address">
+                    <div id="emailError" class="error-message">Invalid email address!</div>
+                </div>
+
+                <div>
+                    <label for="confirm-email">Confirm your Email Address</label>
+                    <input type="email" name="confirm-email" id="confirm-email" placeholder="Confirm your Eamil Address">
+                    <div id="confirmEmailError" class="error-message">Emails do not match!</div>
+                </div>
+
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Your Password">
+                    <div id="passwordError" class="error-message">Password is not right!</div>
+                </div>
+
+            <label for="select-country">Country of Residence</label>
+            <select name="country" id="select-country">
+                <option value="Albania">Albania</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Belgium">Belgium</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Chile">Chile</option>
+                <option value="China">China</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Dominica">Dominica</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Egypt">Egypt</option>
+                <option value="Fiji">Fiji</option>
+                <option value="Finland">Finland</option>
+                <option value="Germany">Germany</option>
+                <option value="Greece">Greece</option>
+                <option value="Haiti">Haiti</option>
+                <option value="Hungary">Hungary</option>
+                <option value="Iceland">Iceland</option>
+                <option value="Iran">Iran</option>
+                <option value="Japan">Japan</option>
+                <option value="Jordan">Jordan</option>
+                <option value="Kazakhstan">Kazakhstan</option>
+                <option value="Kosova">Kosova</option>
+
+            </select>
+
+            <div class="captcha">
+                <label for="checkbox"></label><input type="checkbox" name="captcha" id="i-am-human">I am human</label>
+            </div>
+
+            <div class="terms">
+                <input type="checkbox" name="terms" id="agree-terms"> I am 13 years of age or older and agree to the terms of the <a href="#">Steam Subcriber Agreement</a> and the <a href="#">Valve Privacy Policy</a>.
+            </div>
+
+            <button class="btn-submit" type="submit">Continue</button>
+            </form>
+
+        </section>
+    </section>
+
+    <section class="footer">
+        <hr>
+        <p>© 2024 GameNexus Corporation. All rights reserved. All trademarks are property of their respective owners in the Kosova and other countries.</p>
+        <!-- <img class="logo-footer" src="#" alt="logo-img"> -->
+        <div class="links">
+        <a href="#">About</a>
+        <a href="#">Store</a>
+        <a href="#">Support</a>
+        <a href="#">Cookies</a>
+        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <hr>
+    </section>
+    <script src="registration-form.js"></script>
+</body>
+</html>
