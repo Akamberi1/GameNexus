@@ -1,0 +1,143 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    min-height: 100vh;
+}
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('/Front-end/images/bg-image.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    z-index: -1; /* Places the background behind the content */
+}
+header {
+    height: 10vh;
+    background-color: #171a21;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* img per logo style */
+
+nav a {
+    color: #c7d5e0;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.forma {
+    height: 80vh;
+    width: 50;
+    height: 80vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #181a21;
+    position: relative;
+    top: 5vh;
+}
+
+.sign-in-p {
+    color: white;
+    font-size: 32px;
+}
+
+.inputs {
+    width: 80%;
+    height: 9%;
+    padding-left: 5%;
+    background-color: #32353c;
+    outline: none;
+    border: none;
+    color: #b1b1b1;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.singleLine {
+    width: 80%;
+    height: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    bottom: 11vh;
+}
+
+.remember-div {
+    width: 40%;
+    height: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.remember-div>input {
+    width: 20%;
+    height: 100%;
+    border: none;
+    background-color: #32353c;
+}
+
+.remember-label {
+    margin-left: 1%;
+    font-size: 15px;
+    color: #b1b1b1;
+}
+
+button {
+    width: 80%;
+    height: 8%;
+    background-color: #14a4ff;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    color: white;
+    position: relative;
+    bottom: 9vh;
+    cursor: pointer;
+
+}
+
+.noAccount>p {
+    color: #b1b1b1;
+}
+
+.noAccount>p>a {
+    text-decoration: none;
+    color: #14a4ff;
+
+}
+
+.help {
+    font-size: 15px;
+    color: #b1b1b1;
+    position: relative;
+    bottom: 5vh;
+}
