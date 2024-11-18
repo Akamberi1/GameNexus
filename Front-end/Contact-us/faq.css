@@ -6,45 +6,100 @@
 
 body {
     min-height: 100vh;
-    background-color:#1b2a3d ;
+    background-color: #1b2a3d;
 }
 
 header {
+    width: 100vw;
     height: 10vh;
     background-color: #171a21;
     padding: 20px 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-position: center;
-    background-size: cover;
-    position: relative;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.left-elements>.right>a {
+    text-decoration: none;
+}
+
+.logo {
+    width: 10%;
+    height: 100%;
+}
+
+#logo1 {
+    width: 100%;
+    height: 100%;
 }
 
 nav a {
     color: #c7d5e0;
     text-decoration: none;
     margin: 0 10px;
+    text-transform: uppercase;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: white;
+}
+
+nav a::selection {
+    background-color: #445468;
+    color: white;
 }
 
 .right {
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    width: 35%;
+    height: 100%;
+}
+
+.right-elements {
+    width: 10%;
+    height: 100%;
+    position: relative;
+}
+
+.right-elements>a::selection {
+    background-color: #445468;
+    color: white;
+}
+
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    color: #c7d5e0;
+    text-transform: uppercase;
+}
+
+.login:hover {
+    color: white;
 }
 
 .right a {
     margin-left: 20px;
 }
 
+.faqNForm {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 main {
-    width: 50%;
-    height: 50vh;
+    width: 40%;
+    height: 85%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -54,13 +109,13 @@ main {
 
 .headings {
     width: 100%;
-    height: 25%;
+    height: 10%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
-    position: relative;
-    left: 1vw;
+    text-align: center;
+    border-bottom: 5px solid #445468;
 }
 
 
@@ -70,16 +125,26 @@ main {
 
 .help-h2 {
     font-size: 30px;
+    border-bottom: 2px solid #445468;
+    text-align: center;
 
 }
 
 .popular-questions-p {
+    width: 100%;
     font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.popular-questions-p::selection {
+    background-color: #445468;
+    color: white;
 }
 
 .questions {
-    width: 48vw;
-    height: 38vh;
+    width: 100%;
+    height: 75%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -90,6 +155,8 @@ main {
 
 
 .answers {
+    width: 100%;
+    height: 19%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -97,6 +164,14 @@ main {
 
     background-color: #445468;
     padding-left: 1vw;
+    cursor: pointer;
+    border: 4px solid #171a21;
+    user-select: none;
+}
+
+.answers:hover {
+    opacity: 0.8;
+
 }
 
 
@@ -110,4 +185,188 @@ main {
 
 .extra-description {
     width: 100%;
+}
+
+.contact-us {
+    width: 35%;
+    height: 85%;
+    background-color: #171a21;
+    border: 5px solid #445468;
+    padding: 23px;
+}
+
+.theForm {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-p {
+    font-size: 2.5vw;
+    color: white;
+}
+
+.contact-p::selection {
+    background-color: #445468;
+    color: white;
+}
+
+.child {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+}
+
+.inputs {
+    width: 100%;
+    height: 50%;
+    background-color: #171a21;
+    border: none;
+    outline: none;
+    padding-left: 1vw;
+    color: white;
+    border: 2px solid #445468;
+}
+
+.inputs::selection {
+    background-color: white;
+    /* Custom background color */
+    color: #171a21;
+    /* Custom text color */
+}
+
+.area-container {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.textarea {
+    resize: none;
+    height: 80%;
+    width: 100%;
+}
+
+label::selection {
+
+    background-color: #445468;
+    color: white;
+
+}
+
+.txt-label {
+    width: 100%;
+    height: 7%;
+    position: relative;
+    top: 2%;
+}
+
+button {
+    width: 100%;
+    height: 8%;
+    border: none;
+    background-color: #445468;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    border: 2px solid #171a21;
+}
+
+button:hover {
+    background-color: white;
+    color: #445468;
+    cursor: pointer;
+}
+
+footer {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111a24;
+}
+
+.info {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-image {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-image>img {
+    width: 100%;
+    height: 50%;
+}
+
+.footer-p {
+    width: 70%;
+    height: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-p p {
+    color: white;
+}
+
+.links {
+    position: relative;
+    left: 2vw;
+    width: 37%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.9vh;
+    align-items: center;
+    top: 0.1vh;
+}
+
+.links>a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #c7d5e0;
+}
+
+.p-link {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.socials {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.socials>img {
+    width: 31%;
+    height: 36%;
+}
+
+#twitter {
+    width: 24%;
+    height: 28.5%;
 }
