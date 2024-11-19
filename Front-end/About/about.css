@@ -1,0 +1,73 @@
+body {
+    background-image: 
+        linear-gradient(rgba(4, 9, 30, 0.493), rgba(4, 9, 30, 0.493)), 
+        url(/Front-end/images/bg-image.png);
+    background-size: cover;
+    background-position: center;
+    color: #c7d5e0;
+    margin: 0;
+    padding: 0;
+}
+
+
+header{
+    background-color: #171a21;
+    padding: 20px 40px;
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+/* img per logo style */
+
+nav a{
+    color: #c7d5e0;
+    text-decoration: none;
+    margin: 0 10px;
+}
+nav a:hover{
+    text-decoration: underline;
+}
+
+.right{
+    display: flex;
+    align-items: center;
+}
+.right a{
+    margin-left: 20px;
+}
+
+.footer {
+    background-color: #141c2e;
+    height: auto;
+    padding-top: 50px;
+    text-align: center;
+    padding-bottom: 30px;
+    margin-top: 20px; 
+}
+
+.footer hr {
+    width: 80%; 
+    margin: 20px auto; 
+    border: 1px solid #c7d5e0; 
+}
+
+.links {
+    text-align: center; 
+}
+
+.links a {
+    display: inline-block; 
+    margin: 0 10px; 
+    text-decoration: none;
+    color: #c7d5e0;
+}
+.links a:hover{
+    text-decoration: underline;
+    transition: 1s;
+}
