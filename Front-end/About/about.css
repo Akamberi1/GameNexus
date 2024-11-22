@@ -1,4 +1,5 @@
 body {
+    background-color: #1a1a1a;
     background-image: 
         linear-gradient(rgba(4, 9, 30, 0.493), rgba(4, 9, 30, 0.493)), 
         url(/Front-end/images/bg-image.png);
@@ -7,8 +8,8 @@ body {
     color: #c7d5e0;
     margin: 0;
     padding: 0;
+    height: 100vh;
 }
-
 
 header{
     background-color: #171a21;
@@ -23,8 +24,6 @@ header{
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-/* img per logo style */
-
 nav a{
     color: #c7d5e0;
     text-decoration: none;
@@ -40,6 +39,44 @@ nav a:hover{
 }
 .right a{
     margin-left: 20px;
+}
+
+.container{
+    display: flex;
+    height: calc(120vh - 50px); 
+}
+.container-right {
+    position: relative;
+    margin-left: auto;
+    width: 320px;
+    height: 230px;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.container-left {
+    flex: 1; 
+    padding: 20px; 
+}
+
+.screen {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.screen video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@keyframes steam {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-20px); opacity: 0; }
 }
 
 .footer {
