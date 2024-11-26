@@ -1,8 +1,8 @@
 body {
     background-color: #1a1a1a;
-    background-image: 
+    /* background-image: 
         linear-gradient(rgba(4, 9, 30, 0.493), rgba(4, 9, 30, 0.493)), 
-        url(/Front-end/images/bg-image.png);
+        url(/Front-end/images/bg-image.png); */
     background-size: cover;
     background-position: center;
     color: #c7d5e0;
@@ -41,42 +41,48 @@ nav a:hover{
     margin-left: 20px;
 }
 
-.container{
-    display: flex;
-    height: calc(120vh - 50px); 
-}
-.container-right {
-    position: relative;
-    margin-left: auto;
-    width: 320px;
-    height: 230px;
-    background-color: #2a2a2a;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-.container-left {
-    flex: 1; 
-    padding: 20px; 
-}
-
-.screen {
+.inner-content video{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
     position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    background-color: #333;
+    top: 5;
+    bottom: 5;
+    right: 5;
+    margin-left:-250px ;
     border-radius: 10px;
     overflow: hidden;
 }
-.screen video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+.stats {
+    display: flex;
+    justify-content: center;
+    margin: 23px 89px;
 }
-@keyframes steam {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-20px); opacity: 0; }
+
+.stats div .info {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.install-btn-main {
+    background-color: #1a9fff;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 3px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px 0;
+}
+.install-btn-main i {
+    margin-left: 10px;
+}
+.available-on {
+    margin-top: 20px;
+}
+.available-on i {
+    font-size: 24px;
+    margin: 0 10px;
 }
 
 .footer {
@@ -107,4 +113,42 @@ nav a:hover{
 .links a:hover{
     text-decoration: underline;
     transition: 1s;
+}
+
+.inner-content{
+	padding: 7rem 0;
+}
+
+.content .inner-content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container p {
+    font-size: 1.2rem;
+    padding-top: 0.5rem;
+}
+
+.container > div {
+    padding: 1.5rem 0;
+}
+
+.inner-content .text-lg {
+    font-family: "Motiva Sans", Sans-serif;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 200;
+	margin:10px 0;
+    padding: 30px 40px;
 }
