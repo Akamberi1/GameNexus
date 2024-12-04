@@ -9,6 +9,7 @@ body {
     background-color: #1b2a3d;
 }
 
+
 header {
     width: 100vw;
     height: 10vh;
@@ -64,6 +65,20 @@ nav a::selection {
     width: 10%;
     height: 100%;
     position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-logo {
+    position: relative;
+    right: 10%;
+    cursor: pointer;
+}
+
+.shopping-logo {
+    position: relative;
+    right: 20%;
+    cursor: pointer;
 }
 
 .right-elements>a::selection {
@@ -91,16 +106,18 @@ nav a::selection {
 
 main {
     width: 100vw;
-    height: 100vh;
+    height: 260.7vh;
 }
 
 
 .slider-container {
     width: 76%;
-    height: 67%;
+    height: 68vh;
     margin: auto;
     position: relative;
     top: -3vh;
+
+    z-index: 1;
 }
 
 .slider {
@@ -108,6 +125,17 @@ main {
     height: 90%;
     display: flex;
     justify-content: space-between;
+}
+
+.slider>img {
+    transition: transform 0.3s ease-in-out;
+    /* question*/
+    z-index: 2;
+}
+
+.slider>img:hover {
+    transform: scale(1.05);
+    z-index: 3;
 }
 
 .slide {
@@ -133,13 +161,16 @@ main {
     cursor: pointer;
 }
 
-.buttons:hover{
+.buttons:hover {
     background-color: #c7d5e0;
     color: black;
 }
 
 .featured {
+    background: linear-gradient(135deg, #1e3a5f, #0e2332);
     position: relative;
+    bottom: 1.7vh;
+    z-index: -1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,15 +195,15 @@ main {
 }
 
 .featured-2 {
+    height: 181vh;
     position: relative;
     bottom: 13vh;
-    z-index: -1;
-    height: 100%;
 
     background: linear-gradient(135deg, #1e3a5f, #0e2332);
+    /* question*/
     color: white;
     padding: 40px 20px;
-    text-align: center;
+    /* question*/
     border-bottom: 3px solid #0e2332;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -184,19 +215,160 @@ main {
     font-weight: 700;
 }
 
-.featured-2 p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-}
 
-.head-2{
+.head-2 {
     width: 100%;
-  height: 20%;
-  position: relative;
-  top: 4vh;
+    height: 10%;
+    position: relative;
+    top: 5vh;
+    text-align: center;
 }
 
-/* footer {
+.products {
+    width: 82%;
+    height: 90%;
+    position: relative;
+    top: 2vh;
+    margin: auto;
+}
+
+.flex-1 {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-item {
+    width: 24.05%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    /* question*/
+}
+
+.flex-item:hover {
+
+    transform: scale(1.15);
+    /* question*/
+    z-index: 3;
+}
+
+.flex-item>img {
+    width: 100%;
+    height: 80%;
+    box-shadow: 1px 1px 5px black;
+    /* question*/
+}
+
+.discount {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.discount-now {
+    width: 25%;
+    height: 100%;
+    background-color: green;
+}
+
+.discount-now>p {
+    color: black;
+    font-size: 14px;
+    position: relative;
+    left: 15%;
+    top: 13%;
+    font-weight: 900;
+}
+
+
+.price-now {
+    position: relative;
+    width: 75%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grey-p {
+    color: gray;
+    font-size: 14px;
+    position: relative;
+    right: 5%;
+}
+
+.white-p {
+    font-size: 14px;
+    position: relative;
+    left: 5%;
+}
+
+.diagonal-line {
+    position: absolute;
+    width: 41px;
+    height: 0.7px;
+    background: gray;
+    transform: rotate(154deg);
+    left: 6%;
+}
+
+.flex-2 {
+    height: 25%;
+}
+
+.flex-2>.flex-item {
+    width: 32.5%;
+}
+
+.flex-2>.flex-item>.discount {
+    height: 8%;
+    width: 37%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
     width: 100vw;
     height: 20vh;
     display: flex;
@@ -279,4 +451,4 @@ main {
 #twitter {
     width: 24%;
     height: 28.5%;
-} */
+}
