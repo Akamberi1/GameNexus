@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+
+header {
+    width: 100vw;
+    height: 10vh;
+    background-color: #171a21;
+    padding: 20px 20px;
+    display: flex;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.left-elements>.right>a {
+    text-decoration: none;
+}
+
+.logo {
+    width: 10%;
+    height: 100%;
+}
+
+#logo1 {
+    width: 100%;
+    height: 100%;
+}
+
+nav a {
+    color: #c7d5e0;
+    text-decoration: none;
+    margin: 0 10px;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav a::selection {
+    background-color: #445468;
+    color: white;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 35%;
+    height: 100%;
+}
+
+.right-elements {
+    width: 10%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-logo {
+    position: relative;
+    right: 10%;
+    cursor: pointer;
+}
+
+.shopping-logo {
+    position: relative;
+    right: 20%;
+    cursor: pointer;
+}
+
+.right-elements>a::selection {
+    background-color: #445468;
+    color: white;
+}
+
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    color: #c7d5e0;
+    text-transform: uppercase;
+}
+
+.login:hover {
+    color: white;
+}
+
+.right a {
+    margin-left: 20px;
+}
+
+main {
+    width: 100vw;
+    height: 150vh;
+    background-color: #1b2a3d;
+}
+
+.content {
+    width: 100%;
+    height: 61.8%;
+    background: linear-gradient(135deg, #1e3a5f, #0e2332);
+}
+
+.overlay {
+    width: 100vw;
+    height: 93vh;
+    background: url('/Front-end/images/dark-souls.png') no-repeat center center;
+    background-size: auto;
+    background-blend-mode: overlay;
+    background-size: cover;
+    opacity: 0.18;
+    position: absolute;
+    top: 10vh;
+    border-bottom: 4px solid black;
+}
+
+
+.game {
+    width: 65%;
+    height: 70%;
+    background-color: #0000007d;
+    z-index: 2;
+    position: relative;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: space-between;
+
+    box-shadow: 1px 1px 8px black;
+}
+
+.title-game {
+    width: 65%;
+    height: 10%;
+    margin: auto;
+    position: relative;
+    top: 10%;
+}
+
+.title-game>h2 {
+    color: white;
+    font-size: 30px;
+}
+
+.left-side {
+    width: 65%;
+    height: 99%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-image {
+    width: 100%;
+    height: 84%;
+}
+
+.main-image>img {
+    width: 100%;
+    height: 100%;
+}
+
+.side-images {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div-image {
+    width: 19.5%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.div-image>img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.right-side {
+    width: 34%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image-description {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image-description>img {
+    width: 100%;
+    height: 67%;
+}
+
+.image-description>p {
+    width: 100%;
+    height: 30%;
+    color: #c7d5e0;
+    line-height: 1.3;
+}
+
+.reviews {
+    width: 100%;
+    height: 27%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.review-left-side {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.review-left-side>p {
+    color: #c7d5e0;
+}
+
+.review-left-side>p>a {
+    text-decoration: none;
+    color: #c7d5e0;
+}
+
+.review-right-side {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.review-right-side>p {
+    color: #66C0F4;
+    position: relative;
+    right: 5%;
+}
+
+.tgth>p {
+    color: #c7d5e0;
+}
+
+.extra {
+    text-align: end;
+    position: relative;
+    right: 4%;
+}
+
+.extra>p {
+    color: #66C0F4;
+    position: relative;
+    right: 1%;
+}
+
+.categories {
+    width: 97%;
+    height: 4%;
+    position: relative;
+    bottom: 1vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.categories>div {
+    width: 18%;
+    height: 100%;
+    background-color: #263f4f;
+    border-radius: 2px;
+}
+
+.cat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cat>p {
+    color: #66C0F4;
+    font-size: 12px;
+    text-align: center;
+}
+
+#special {
+    width: 24%;
+}
+
+.buy {
+    width: 50%;
+    height: 7%;
+    position: relative;
+    left: 17.5vw;
+    top: 5vh;
+    background: linear-gradient(-60deg, rgba(226, 244, 255, 0.3) 5%, rgba(84, 107, 115, 0.3) 95%);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.buy-text-div {
+    width: 88%;
+    height: 100%;
+}
+
+.buy-text {
+    font-size: 27px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    color: #c7d5e0;
+}
+
+.add-to-cart {
+    position: absolute;
+    top: 75%;
+  right: 8%;
+
+    width: 26%;
+  height: 53%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    border-radius: 2px;
+}
+
+.price {
+    width: 46%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.price>p {
+    font-size: 16.5px;
+    color: #c7d5e0;
+    position: relative;
+    top: 1.3%;
+}
+
+.text {
+
+    width: 62%;
+    height: 75%;
+    background: linear-gradient(to right, #8ed629 5%, #6aa621 95%);
+    border-radius: 2px;
+    position: relative;
+    right: 2.5%;
+    text-align: center;
+}
+
+.text>p {
+    position: relative;
+    top: 15.9%;
+    font-size: 17px;
+    color: white;
+}
+
+
+
+/* .featured {
+    width: 80%;
+    height: 80vh;
+
+
+    margin: auto;
+    padding: 40px 20px;
+
+    position: relative;
+    top: 5vh;
+    bottom: 1.7vh;
+    z-index: -1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #1e3a5f, #0e2332);
+    color: white;
+    text-align: center;
+    border-bottom: 3px solid #0e2332;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} */
