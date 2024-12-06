@@ -65,7 +65,7 @@ nav a::selection {
     height: 100%;
     position: relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .profile-logo {
@@ -105,13 +105,13 @@ nav a::selection {
 
 main {
     width: 100vw;
-    height: 150vh;
+    height: 321.5vh;
     background-color: #1b2a3d;
 }
 
 .content {
     width: 100%;
-    height: 61.8%;
+    height: 93vh;
     background: linear-gradient(135deg, #1e3a5f, #0e2332);
 }
 
@@ -316,7 +316,7 @@ main {
 
 .buy {
     width: 50%;
-    height: 7%;
+    height: 11vh;
     position: relative;
     left: 17.5vw;
     top: 5vh;
@@ -345,10 +345,10 @@ main {
 .add-to-cart {
     position: absolute;
     top: 75%;
-  right: 8%;
+    right: 8%;
 
     width: 26%;
-  height: 53%;
+    height: 53%;
 
     display: flex;
     justify-content: space-between;
@@ -381,6 +381,7 @@ main {
     position: relative;
     right: 2.5%;
     text-align: center;
+    cursor: pointer;
 }
 
 .text>p {
@@ -390,7 +391,352 @@ main {
     color: white;
 }
 
+.the-reviews {
+    width: 50%;
+    height: 37vh;
+    position: relative;
+    left: 17.5vw;
+    top: 13vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+.h3-reviews {
+    width: 100%;
+    height: 10%;
+    margin-bottom: 1px solid;
+}
+
+.h3-reviews>h3 {
+    text-transform: uppercase;
+    font-size: 16px;
+    color: white;
+}
+
+.p-desc {
+    color: #a6b0b8;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    position: relative;
+    bottom: 5%;
+    line-height: 21px;
+}
+
+.games-span {
+    color: white;
+}
+
+.line-under-h3 {
+    position: absolute;
+    top: 23px;
+
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #3a6e8b, #1e2e3f);
+}
+
+.another-line {
+    position: absolute;
+    top: 9vh;
+    width: 67%;
+    left: 17.4vw;
+}
+
+.about-this-game {
+    top: 20vh;
+    height: 70vh;
+}
+
+.p-about {
+    color: #a6b0b8;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 21px;
+    height: 17%;
+}
+
+.p1-about {
+    position: relative;
+    top: 2vh;
+}
+
+.video {
+    width: 100%;
+    height: 28vh;
+}
+
+/* other games section css code */
+.featured-2 {
+    height: 82vh;
+    position: relative;
+    top: 29vh;
+    background: radial-gradient(62.67% 62.67% at 62.67% 100%, rgba(255, 255, 255, 0.15) 0%, rgba(116, 133, 140, 0.15) 100%);
+    /* Question */
+    color: white;
+    padding: 40px 20px;
+    border-bottom: 3px solid #0e2332;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.featured-2 h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+
+.head-2 {
+    width: 67%;
+    height: 5%;
+    position: relative;
+    text-transform: capitalize;
+    margin: auto;
+}
+
+.head-2>h3 {
+    font-size: 20px;
+}
+
+.products {
+    width: 67%;
+    height: 89%;
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 1vh;
+}
+
+.flex-1 {
+    width: 100%;
+    height: 34%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-item {
+    width: 24.05%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    /* question*/
+}
+
+.flex-item:hover {
+
+    transform: scale(1.1);
+    /* question*/
+    z-index: 3;
+}
+
+.flex-item>img {
+    width: 100%;
+    height: 90%;
+    box-shadow: 1px 1px 5px black;
+    /* question*/
+}
+
+.discount {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.discount-now {
+    width: 25%;
+    height: 100%;
+    background-color: green;
+}
+
+.discount-now>p {
+    color: black;
+    font-size: 14px;
+    position: relative;
+    left: 15%;
+    top: 13%;
+    font-weight: 900;
+}
+
+
+.price-now {
+    position: relative;
+    width: 75%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grey-p {
+    color: gray;
+    font-size: 14px;
+    position: relative;
+    right: 5%;
+}
+
+.white-p {
+    font-size: 14px;
+    position: relative;
+    left: 5%;
+}
+
+.diagonal-line {
+    position: absolute;
+    width: 41px;
+    height: 0.7px;
+    background: gray;
+    transform: rotate(154deg);
+    left: 6%;
+}
+
+
+footer {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111a24;
+    position: relative;
+}
+
+.info {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-image {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-image>img {
+    width: 100%;
+    height: 50%;
+}
+
+.footer-p {
+    width: 70%;
+    height: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-p p {
+    color: white;
+}
+
+.links {
+    position: relative;
+    left: 2vw;
+    width: 37%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.9vh;
+    align-items: center;
+    top: 0.1vh;
+}
+
+.links>a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #c7d5e0;
+}
+
+.p-link {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.socials {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.socials>img {
+    width: 31%;
+    height: 36%;
+}
+
+#twitter {
+    width: 24%;
+    height: 28.5%;
+}
+
+.loginSignupPop {
+    width: 170px;
+    height: 65px;
+    background-color: #171a21;
+    position: absolute;
+    top: 12vh;
+    right: 0.8vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid #c7d5e0;
+
+    display: none;
+}
+
+.triangle { /* Question */
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #c7d5e0;
+    bottom: 8.7vh;
+    left: 4.8vw;
+}
+
+
+.lS {
+    width: 100%;
+    height: 49%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #c7d5e0;
+}
+
+.lS:hover {
+    background-color: #22272f;
+}
+
+.lS>p {
+    font-size: 17px; 
+}
+
+#pop-line {
+    width: 100%;
+}
 
 /* .featured {
     width: 80%;
