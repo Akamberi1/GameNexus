@@ -1,16 +1,20 @@
-let profile = document.getElementsByClassName("profile-logo");
-let loginSignup = document.getElementsByClassName('loginSignupPop')
+// Added to cart notification function
+
+let addToCartBtn = document.getElementsByClassName("text");
+
+addToCartBtn[0].addEventListener("click",()=>{
+    let text = document.getElementsByClassName("cart-notification-p");
+    let circleNotification = document.getElementsByClassName("cart-notification-circle");
+    
+    let counter = text[0].textContent;
 
 
-profile[0].addEventListener('click',()=>{
-
-    if(loginSignup[0].style.display == ''){
-        loginSignup[0].style.display = 'block';
+    if(circleNotification[0].style.display == ''){
+        circleNotification[0].style.display = 'flex';
+        addToCartBtn[0].style.cursor = 'default';
+        addToCartBtn[0].disabled = true;
+        counter++;
+        text[0].textContent = counter;
     }
-    else if(loginSignup[0].style.display == 'block'){
-        loginSignup[0].style.display = '';
-    }
-
-
-    // loginSignup[0].style.display = 'block';
+    
 })

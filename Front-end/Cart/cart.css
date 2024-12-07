@@ -6,7 +6,6 @@
 
 body {
     min-height: 100vh;
-    background-color: #1b2a3d;
 }
 
 
@@ -104,6 +103,7 @@ nav a::selection {
     margin-left: 20px;
 }
 
+
 .loginSignupPop {
     width: 170px;
     height: 65px;
@@ -159,134 +159,263 @@ nav a::selection {
     width: 100%;
 }
 
-
 main {
     width: 100vw;
-    height: 260.7vh;
+    height: 165vh;
+    background-color: #1b2838;
 }
 
 
-.slider-container {
-    width: 76%;
-    height: 68vh;
+.buy-it {
+    width: 64vw;
+    height: 53vh;
     margin: auto;
     position: relative;
-    top: -3vh;
-
-    z-index: 1;
+    top: 8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.slider {
+.shp-h {
     width: 100%;
-    height: 90%;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-}
-
-.slider>img {
-    transition: transform 0.3s ease-in-out;
-    /* question*/
-    z-index: 2;
-}
-
-.slider>img:hover {
-    transform: scale(1.05);
-    z-index: 3;
-}
-
-.slide {
-    box-shadow: 1px 1px 10px black;
-}
-
-.button-sliders {
-    position: absolute;
-    width: 110%;
-    height: 33%;
-    display: flex;
-    justify-content: space-between;
-    bottom: 40%;
-    right: -3.6vw;
-}
-
-.buttons {
-    width: 3%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.516);
+    height: 5vh;
+    font-size: 22px;
     color: white;
-    border: none;
-    cursor: pointer;
+    font-weight: bolder;
 }
 
-.buttons:hover {
-    background-color: #c7d5e0;
-    color: black;
+.shopping {
+    width: 100%;
+    height: 50vh;
+
+    display: flex;
+    justify-content: space-between;
 }
 
-.featured {
-    background: linear-gradient(135deg, #1e3a5f, #0e2332);
+
+.shopping-section {
+    width: 66%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    /* background-color: #171a21; */
+}
+
+.shopping-product {
+    width: 100%;
+    height: 21vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: #15202e;
+    align-items: center;
+}
+
+
+.shopping-image {
+    width: 35%;
+    height: 70%;
     position: relative;
-    bottom: 1.7vh;
-    z-index: -1;
+    left: 1vw;
+    bottom: 1vh;
+}
+
+.shopping-image>img {
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    height: 100%;
+    width: 36%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.title>h2 {
+    width: 100%;
+    height: 30%;
+    position: relative;
+    bottom: 1vh;
+    text-transform: uppercase;
+    color: white;
+    font-size: 16px;
+}
+
+.title>img {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 8.8vh;
+    right: 0.1vw;
+}
+
+
+
+.priceNdMore {
+
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+
+.priceNdMore>p {
+    font-size: 18px;
+    color: #c7d5e0;
+    position: relative;
+    top: 8.7vh;
+    right: 1vw;
+}
+
+.addRemove {
+    width: 70%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    bottom: 5vh;
+    right: 1vw;
+}
+
+.add>p {
+    font-size: 14px;
+    color: #556a76;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+.remove>p {
+    font-size: 14px;
+    color: #556a76;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+.vertical-line {
+    position: absolute;
+    left: 2vw;
+    width: 1px;
+    height: 100%;
+    background: #445d75;
+}
+
+
+
+.shoppingRemove {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.continue-shopping {
+    width: 25%;
+    height: 45%;
+    background-color: #3d4450;
+    border-radius: 2.2px;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 25vh;
+
+    cursor: pointer;
+
+}
+
+.continue-shopping>p {
+    font-size: 16px;
+    color: #c7d5e0;
+    text-transform: capitalize;
+}
+
+.shoppingRemove>p {
+    font-size: 15px;
+    text-decoration: underline;
+    color: #556a76;
+}
+
+.total {
+    width: 29%;
+    height: 47%;
+    background-color: #15202e;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.estimated-p {
+    width: 87%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
     color: white;
-    padding: 40px 20px;
-    text-align: center;
-    border-bottom: 3px solid #0e2332;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.featured h1 {
-    font-size: 4.5rem;
-    margin: 0;
-    letter-spacing: 1px;
-    font-weight: 700;
-}
+.tax-p {
+    width: 87%;
+    color: #a1aab6;
 
-.featured p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-}
-
-.featured-2 {
-    height: 181vh;
     position: relative;
-    bottom: 13vh;
+    bottom: 1vh;
+}
 
-    background: linear-gradient(135deg, #1e3a5f, #0e2332);
-    /* question*/
+.continue-to-payment-btn {
+    width: 87%;
+    height: 20%;
+    background: linear-gradient(to right, #47bfff 0%, #1a44c2 60%);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto;
+    background-position: 0%;
+    background-size: 330% 100%;
+    color: #fff;
+
+    position: relative;
+    bottom: 2vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 2px;
+
+    cursor: pointer;
+}
+
+.continue-to-payment-btn>p {
     color: white;
-    padding: 40px 20px;
-    /* question*/
-    border-bottom: 3px solid #0e2332;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 17px;
 }
 
-.featured-2 h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    letter-spacing: 1px;
-    font-weight: 700;
-}
-
-
-.head-2 {
-    width: 100%;
-    height: 10%;
+.recommended {
+    width: 42.6vw;
+    height: 90vh;
     position: relative;
-    top: 5vh;
-    text-align: center;
+    left: 17.6vw;
+    top: 2vh;
 }
 
 .products {
-    width: 82%;
-    height: 90%;
-    position: relative;
-    top: 2vh;
+    width: 100%;
+    height: 100%;
     margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .flex-1 {
@@ -298,7 +427,7 @@ main {
 }
 
 .flex-item {
-    width: 24.05%;
+    width: 32.05%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -306,21 +435,18 @@ main {
     cursor: pointer;
     position: relative;
     transition: transform 0.3s ease-in-out;
-    /* question*/
 }
 
 .flex-item:hover {
 
-    transform: scale(1.15);
-    /* question*/
+    transform: scale(1.1);
     z-index: 3;
 }
 
 .flex-item>img {
     width: 100%;
-    height: 80%;
+    height: 100%;
     box-shadow: 1px 1px 5px black;
-    /* question*/
 }
 
 .discount {
@@ -379,11 +505,11 @@ main {
 }
 
 .flex-2 {
-    height: 25%;
+    height: 30%;
 }
 
 .flex-2>.flex-item {
-    width: 32.5%;
+    width: 49.5%;
 }
 
 .flex-2>.flex-item>.discount {
@@ -391,39 +517,21 @@ main {
     width: 37%;
 }
 
+.flex-3 {
+    height: 40%;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.rec-h2 {
+    font-size: 20px;
+    color: #c7d5e0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    left: 17.5vw;
+    width: 30vw;
+    top: 1vh;
+}
 
 footer {
     width: 100vw;
@@ -432,6 +540,7 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: #111a24;
+    position: relative;
 }
 
 .info {
@@ -508,25 +617,4 @@ footer {
 #twitter {
     width: 24%;
     height: 28.5%;
-}
-
-.cart-notification-circle {
-    width: 15px;
-    height: 15px;
-    border-radius: 50px;
-    background-color: #c7d5e0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 2vh;
-    right: 8vw;
-
-    display: none;
-}
-
-.cart-notification-circle>p {
-    color: #22272f;
-    font-size: 10px;
-    font-weight: bolder;
 }
