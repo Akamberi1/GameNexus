@@ -1,7 +1,7 @@
 let registerButton = document.getElementsByClassName("btn-submit");
 
 registerButton[0].addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault();
 
     const username = document.getElementById("username");
     const email = document.getElementById("email-address");
@@ -11,11 +11,10 @@ registerButton[0].addEventListener("click", (event) => {
     const isHuman = document.getElementById("i-am-human").checked;
     const agreeTerms = document.getElementById("agree-terms").checked;
 
-    const usernameRegex = /^(?!.*\s)[a-zA-Z0-9]{3,20}$/; // No whitespace, 3-20 characters
-    const passwordRegex = /^(?!.*\s)(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; // At least 8 chars, 1 letter, 1 number, no whitespace
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email validation
+    const usernameRegex = /^(?!.*\s)[a-zA-Z0-9]{3,20}$/;
+    const passwordRegex = /^(?!.*\s)(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
 
-    // Username validation
     if (username.value.trim() === "" || username.value == null) {
         alert("Username can't be blank!");
         username.focus();
@@ -26,7 +25,6 @@ registerButton[0].addEventListener("click", (event) => {
         return false;
     }
 
-    // Email validation
     if (email.value.trim() === "" || email.value == null) {
         alert("Email can't be blank!");
         email.focus();
@@ -37,14 +35,12 @@ registerButton[0].addEventListener("click", (event) => {
         return false;
     }
 
-    // Confirm email validation
     if (email.value !== confirmEmail.value) {
         alert("Email addresses do not match.");
         confirmEmail.focus();
         return false;
     }
 
-    // Password validation
     if (password.value.trim() === "" || password.value == null) {
         alert("Password can't be blank!");
         password.focus();
@@ -55,35 +51,30 @@ registerButton[0].addEventListener("click", (event) => {
         return false;
     }
 
-    // Country validation
     if (country.value === "") {
         alert("Please select your country of residence.");
         country.focus();
         return false;
     }
 
-    // Human verification
     if (!isHuman) {
         alert("Please confirm that you are human.");
         return false;
     }
 
-    // Terms agreement
     if (!agreeTerms) {
         alert("You must be 13 years of age or older and agree to the terms.");
         return false;
     }
 
-    // Success
     console.log("Registration Successful!");
     console.log("Username:", username.value);
     console.log("Email:", email.value);
     console.log("Password:", password.value);
     console.log("Country:", country.value);
 
-    // Reset the form after successful validation
     let registrationForm = document.getElementById("registration-form");
 
-    window.location.href = "../Login/login.html"; // Redirect to Login
-    registrationForm.reset(); // Reset the form
+    window.location.href = "../Login/login.html";
+    registrationForm.reset();
 });
