@@ -24,14 +24,14 @@ let loginSignup = document.getElementsByClassName("lS");
 
 loginSignup[0].addEventListener("click",()=>{
     console.log("click!");
-    window.location.href = '/Front-end/Login/login.html';
+    window.location.href = '../Login/login.html';
 
 })
 
 
 loginSignup[1].addEventListener("click",()=>{
 
-    window.location.href = '/Front-end/Register/registration-form.html';
+    window.location.href = '../Register/registration-form.html';
 
 })
 
@@ -43,7 +43,7 @@ let circleNotification = document.getElementsByClassName("cart-notification-circ
 
 shoppingLogo[0].addEventListener("click",()=>{
 
-    window.location.href = '/Front-end/Cart/cart.html';
+    window.location.href = '../Cart/cart.html';
 
     circleNotification[0].style.display = "";
 
@@ -56,7 +56,7 @@ let products = document.querySelectorAll(".product");
 products.forEach(product => {
     product.addEventListener("click",()=>{
         console.log("Working!")
-        window.location.href = '/Front-end/Product-details/product-details.html';
+        window.location.href = '../Product-details/product-details.html';
 
     })
 });
