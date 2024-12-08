@@ -16,7 +16,7 @@ body {
     height: 100vh;
     background-image: 
         linear-gradient(rgba(4, 9, 30, 0.493), rgba(4, 9, 30, 0.493)), 
-        url(/Front-end/images/bg-image.png);
+        url(../images/bg-image.png);
     background-size: cover;
     background-position: center;
     z-index: -1; /* Places the background behind the content */
