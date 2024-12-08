@@ -45,7 +45,7 @@ button[0].addEventListener('click',(event)=>{
     // Reset the form after submission
     let loginForm = document.getElementById("login-form");
 
-    window.location.href = "/Front-end/Home/home.html";
+    window.location.href = "../Home/home.html";
 
     loginForm.reset();
 

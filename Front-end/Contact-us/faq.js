@@ -69,7 +69,7 @@ contactSubmitBtn.addEventListener("click",(event)=>{
     contactForm.reset();
 
     alert("Your message has been sent.Thank you for reaching out! We'll try to reply as fast as we can. ^^");
-    window.location.href = "/Front-end/Home/home.html";
+    window.location.href = "../Home/home.html";
 
 })
 
