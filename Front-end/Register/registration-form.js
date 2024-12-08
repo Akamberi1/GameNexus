@@ -18,36 +18,43 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     if (!usernameRegex.test(username)) {
         alert('Username must be 3-20 characters long and can only contain letters and numbers.');
         isValid = false;
+        return false
     }
 
     if (!emailRegex.test(email)) {
         alert('Please enter a valid email address.');
         isValid = false;
+        return false;
     }
 
     if (email !== confirmEmail) {
         alert('Email addresses do not match.');
         isValid = false;
+        return false;
     }
 
     if (!passwordRegex.test(password)) {
         alert('Password must be at least 8 characters long and contain at least one letter and one number.');
         isValid = false;
+        return false;
     }
 
     if (country === "") {
         alert('Please select your country of residence.');
         isValid = false;
+        return false;
     }
 
     if (!isHuman) {
         alert('Please confirm that you are human.');
         isValid = false;
+        return false;
     }
 
     if (!agreeTerms) {
         alert('You must be 13 years of age or older and agree to the terms.');
         isValid = false;
+        return false;
     }
 
     if (isValid) {
