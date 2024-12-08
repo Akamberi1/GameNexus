@@ -1,13 +1,12 @@
 body {
     background-image: 
-    linear-gradient(rgba(4, 9, 30, 0.493), rgba(4, 9, 30, 0.493)),url(/Front-end/images/bg-image.png);
+    linear-gradient(rgba(4, 9, 30, 0.493), rgba(4, 9, 30, 0.493)),url(../images/bg-image.png);
     background-size: cover;
     background-position: center;
     color: #c7d5e0;
     margin: 0;
     padding: 0;
 }
-
 
 header {
     width: 96.4vw;
