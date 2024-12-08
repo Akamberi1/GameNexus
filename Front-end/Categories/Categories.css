@@ -4,10 +4,10 @@
     font-family: 'Poppins', sans-serif;
 }
 .header{
-    min-height: 70vh;
+    min-height: 72vh;
     width: 100%;
     background: rgba(4, 9, 30, 0.7);
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url();
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(/Front-end/images/hq720.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -89,3 +89,306 @@ nav .fa{
     }
     
 }
+
+main {
+    width: 100vw;
+    height: 260.7vh;
+}
+
+
+.slider-container {
+    width: 76%;
+    height: 68vh;
+    margin: auto;
+    position: relative;
+    top: -3vh;
+
+    z-index: 1;
+}
+
+.slider {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.slider>img {
+    transition: transform 0.3s ease-in-out;
+    /* question*/
+    z-index: 2;
+}
+
+.slider>img:hover {
+    transform: scale(1.05);
+    z-index: 3;
+}
+
+.slide {
+    box-shadow: 1px 1px 10px black;
+}
+
+.button-sliders {
+    position: absolute;
+    width: 110%;
+    height: 33%;
+    display: flex;
+    justify-content: space-between;
+    bottom: 40%;
+    right: -3.6vw;
+}
+
+.buttons {
+    width: 3%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.516);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.buttons:hover {
+    background-color: #c7d5e0;
+    color: black;
+}
+.main-featured{
+    background-color: #171a21; 
+}
+.featured-title {
+    padding-top: 80px;
+    color: #c7d5e0;
+    padding-left: 50px; 
+    text-align: center; 
+    font-size: 3em; 
+}
+
+
+.featured {
+    background: linear-gradient(135deg, #1e3a5f, #0e2332);
+    position: relative;
+    bottom: 1.4vh;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1vh;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    border-bottom: 3px solid #0e2332;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.featured p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.container-sign {
+    text-align: center;
+    background-color: #071b35;
+    padding: 40px;
+    color: #fff;
+}
+.container-sign p {
+    margin: 10px 0;
+}
+.sign-in-button {
+    background-color: #103a86;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.sign-in-button:hover {
+    background-color: #0c2b64;
+    transition: 1s;
+}
+.sign-up-link {
+    color: #8f98a0;
+    text-decoration: none;
+}
+.sign-up-link:hover {
+    text-decoration: underline;
+}
+
+.games{
+    padding: 90px;
+    background: linear-gradient(135deg, #1e3a5f, #0e2332);
+}
+.featured-2 {
+    height: 181vh;
+    position: relative;
+    bottom: 19vh;
+    color: white;
+    padding: 40px 20px;
+    margin-bottom: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.featured-2 h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+
+.head-2 {
+    width: 100%;
+    height: 10%;
+    position: relative;
+    top: 5vh;
+    text-align: center;
+}
+
+.products {
+    width: 82%;
+    height: 90%;
+    position: relative;
+    top: 2vh;
+    margin: auto;
+}
+
+.flex-1 {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-item {
+    width: 24.05%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    /* question*/
+}
+
+.flex-item:hover {
+
+    transform: scale(1.15);
+    /* question*/
+    z-index: 3;
+}
+
+.flex-item>img {
+    width: 100%;
+    height: 80%;
+    box-shadow: 1px 1px 5px black;
+    /* question*/
+}
+
+.discount {
+    width: 50%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.discount-now {
+    width: 25%;
+    height: 100%;
+    background-color: green;
+}
+
+.discount-now>p {
+    color: black;
+    font-size: 14px;
+    position: relative;
+    left: 15%;
+    top: 13%;
+    font-weight: 900;
+}
+
+
+.price-now {
+    position: relative;
+    width: 75%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grey-p {
+    color: gray;
+    font-size: 14px;
+    position: relative;
+    right: 5%;
+}
+
+.white-p {
+    font-size: 14px;
+    position: relative;
+    left: 5%;
+}
+
+.diagonal-line {
+    position: absolute;
+    width: 41px;
+    height: 0.7px;
+    background: gray;
+    transform: rotate(154deg);
+    left: 6%;
+}
+
+.flex-2 {
+    height: 25%;
+}
+
+.flex-2>.flex-item {
+    width: 32.5%;
+}
+
+.flex-2>.flex-item>.discount {
+    height: 8%;
+    width: 37%;
+}
+
+
+.footer {
+    background-color: #141c2e;
+    height: 100%;
+    padding-top: 50px;
+    text-align: center;
+    padding-bottom: 30px;
+    margin-top: 0px; 
+  }
+  .footer p{
+    font-size: 14px;
+    color: #c7d5e0;
+  }
+  
+  .footer hr {
+    width: 80%; 
+    height: 100%;
+    margin: 20px auto; 
+    border: 1px solid #c7d5e0; 
+  }
+  
+  .links {
+    text-align: center; 
+    padding: 10px;
+    font-size: 15px;
+  }
+  
+  .links a {
+    display: inline-block; 
+    margin: 0 10px; 
+    text-decoration: none;
+    color: #c7d5e0;
+  }
+  .links a:hover{
+    text-decoration: underline;
+    transition: 1s;
+  }
