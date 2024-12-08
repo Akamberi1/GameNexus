@@ -185,12 +185,11 @@ nav a::selection {
     height: 90vh;
     display: flex;
     justify-content: space-around;
-    align-items: center;
 }
 
 main {
     width: 40%;
-    height: 85%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -209,10 +208,6 @@ main {
     border-bottom: 5px solid #445468;
 }
 
-
-.description {
-    display: none;
-}
 
 .help-h2 {
     font-size: 30px;
@@ -238,7 +233,7 @@ main {
     height: 75%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
 
     /* background-color: #1b2a3d; */
@@ -247,7 +242,7 @@ main {
 
 .answers {
     width: 100%;
-    height: 19%;
+    height: 13vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -258,32 +253,55 @@ main {
     cursor: pointer;
     border: 4px solid #171a21;
     user-select: none;
+
+    margin-bottom:21px;
 }
 
-.answers:hover {
-    opacity: 0.8;
-
-}
 
 
 
 .header-title {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #445468;
+    z-index: 4
+    ;
 }
 
+
+.header-title:hover {
+    opacity: 0.8;
+
+}
 .extra-description {
     width: 100%;
+    height: 20vh;
+    position: relative;
+    top: -1vh;
+    display: none;
+    z-index: 5;
+
+    cursor: default;
+}
+
+.description {
+    width: 100%;
+    height: 100%;
+
 }
 
 .contact-us {
     width: 35%;
-    height: 85%;
+    height: 80vh;
     background-color: #171a21;
     border: 5px solid #445468;
     padding: 23px;
+
+    position: relative;
+    top: 6vh;
 }
 
 .theForm {

@@ -10,21 +10,24 @@
 
 <body>
     <header class="header">
-        <img src="#" alt="logo-img">
+        <div class="logo">
+            <img src="#" alt="logo-img" id="logo1">
+        </div>
         <nav class="right">
-            <a href="#">STORE</a>
-            <a href="/Front-end/About/about.html">ABOUT</a>
-            <a href="#">SUPPORT</a>
+            <a href="/Front-end/Home/home.html">home</a>
+            <a href="/Front-end/Categories/Categories.html">categories</a>
+            <a href="/Front-end/About/about.html">About us</a>
+            <a href="/Front-end/Contact-us/faq.html">Contact us</a>
         </nav>
     </header>
     <div class="background-container"></div>
-    <form action="#" method="" class="forma">
+    <form action="#" method="" class="forma" id="login-form">
         <img src="" alt="">
         <p class="sign-in-p">Sign in</p>
         <!-- <label for="username">Sign in with username</label> -->
-        <input type="text" id="username" name="username" placeholder="Username or Email" class="inputs">
+        <input type="text" id="username" name="username" placeholder="Username" class="inputs">
         <!-- <label for="password"></label> -->
-        <input type="text" id="password" name="password" placeholder="password" class="inputs">;
+        <input type="password" id="password" name="password" placeholder="password" class="inputs">;
         <div class="singleLine">
             <div class="remember-div">
                 <input type="checkbox" id="remember"><label for="remember" class="remember-label">Remember me</label>
@@ -34,9 +37,11 @@
                 <p>Dont have an account? <a href="/Front-end/Register/registration-form.html">Sign up</a></p>
             </div>
         </div>
-        <button type="submit">Sign in</button>
-        <a href="#" class="help">Help, I can't sign in</a>
+        <button type="submit" class="btn-submit">Sign in</button>
+        <a href="/Front-end/Contact-us/faq.html" class="help">Help, I can't sign in</a>
     </form>
+
+    <script src="login.js"></script>
 </body>
 
 </html>
