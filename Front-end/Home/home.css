@@ -62,8 +62,8 @@ nav a::selection {
 }
 
 .right-elements {
-    width: 10%;
-    height: 100%;
+    width: 40px;
+    height: 40px;
     position: relative;
     display: flex;
     justify-content: center;

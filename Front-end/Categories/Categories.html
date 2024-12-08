@@ -4,27 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/Front-end/Categories/Categories.css">
+    <link rel="stylesheet" href="../Categories/Categories.css">
     <script src="https://kit.fontawesome.com/4acdbd152b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/Css/web.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
 </head>
 <body>
-    <nav>
-        <a href="web.html"><img src="images/logo.png.png" alt="Logo of GameNexus" ></a>
-        <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()"></i>
-            <ul>
-                <li><a href="#">STORE</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SUPPORT</a></li>
-            </ul>
+    <div class="loginSignupPop">
+        <div class="lS login-click">
+            <p>Log in</p>
         </div>
-             <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav>
+        <hr id="pop-line">
+        <div class="lS signup-click">
+            <p>Signup</p>
+        </div>
+        <div class="triangle"></div>
+    </div>
+    <div class="cart-notification-circle">
+        <p class="cart-notification-p"></p>
+    </div>
+    <header class="header">
+        <div class="logo">
+            <img src="#" alt="logo-img" id="logo1">
+        </div>
+        <nav class="right">
+            <a href="../Home/home.html">Home</a>
+            <a href="../Categories/Categories.html">Categories</a>
+            <a href="../About/about.html">About us</a>
+            <a href="../Contact-us/faq.html">Contact us</a>
+        </nav>
+        <div class="right-elements">
+            <img src="../images/shopping_cart_21dp_C7D5E0_FILL0_wght400_GRAD0_opsz20.png"
+            alt="shopping-cart-icon" class="shopping-logo">
+            <img src="../images/person_24dp_C7D5E0_FILL0_wght400_GRAD0_opsz24.png" alt="profile-icon"
+                class="profile-logo">
+        </div>
+    </header>
     <section class="header">
     </section>
 
@@ -35,23 +52,23 @@
         <div class="slider-container">
             <div class="slider">
                 <div class="campus-col">
-                    <img src="/Front-end/images/hero_capsule.jpg" alt="Image 1" class="slide product">
+                    <img src="../images/hero_capsule.jpg" alt="Image 1" class="slide product">
                     <div class="layer">
                         <h3>FREE TO PLAY</h3>
                     </div>
                  </div>
                  <div class="campus-col">
-                    <img src="/Front-end/images/dragonDogma.jpg" alt="Image 2" class="slide product">
+                    <img src="../images/dragonDogma.jpg" alt="Image 2" class="slide product">
                     <div class="layer">
                         <h3>CASUAL</h3>
                     </div>
                  </div>
                  <div class="campus-col">
-                    <img src="/Front-end/images/dark-souls3.jpg" alt="Image 3" class="slide product">
+                    <img src="../images/dragonDogma.jpg" alt="Image 2" class="slide product">
                     <div class="layer">
-                        <h3>SURVIVAL</h3>
-                    </div> 
+                        <h3>CASUAL</h3>
                     </div>
+                 </div>
             </div>
             <div class="button-sliders">
                 <button class="buttons prev">&#10094;</button>
@@ -64,8 +81,8 @@
     <section>
     <div class="container-sign">
         <p>Sign in to view personalized recommendations</p>
-        <button class="sign-in-button"><a style="text-decoration: none; color: aliceblue;" href="/Front-end/Login/login.html">Sign In</a></button>
-        <p>Or <a style="color: #103a86;" href="/Front-end/Register/registration-form.html" class="sign-up-link">sign up</a> and join Steam for free</p>
+        <button class="sign-in-button"><a style="text-decoration: none; color: aliceblue;" href="../Login/login.html">Sign In</a></button>
+        <p>Or <a style="color: #103a86;" href="../Register/registration-form.html" class="sign-up-link">sign up</a> and join Steam for free</p>
     </div>
     </section>
 
@@ -78,7 +95,7 @@
             <div class="products">
                 <div class="flex-1">
                     <div class="flex-item product">
-                        <img src="/Front-end/images/lostark.jpg" alt="battlefield2042">
+                        <img src="../images/lostark.jpg" alt="battlefield2042">
                         <div class="discount">
                             <div class="discount-now">
                                 <p>25%</p>
@@ -92,7 +109,7 @@
         
                     </div>
                     <div class="flex-item product">
-                        <img src="/Front-end/images/poster-game-apex-legends.jpg" alt="jedi survivor">
+                        <img src="../images/poster-game-apex-legends.jpg" alt="jedi survivor">
                         <div class="discount">
                             <div class="discount-now">
                                 <p>25%</p>
@@ -105,7 +122,7 @@
                         </div>
                     </div>
                     <div class="flex-item product">
-                        <img src="/Front-end/images/resident-evil.jpg" alt="resident-evil">
+                        <img src="../images/resident-evil.jpg" alt="resident-evil">
                         <div class="discount">
                             <div class="discount-now">
                                 <p>25%</p>
@@ -118,7 +135,7 @@
                         </div>
                     </div>
                     <div class="flex-item product">
-                        <img src="/Front-end/images/nobody.jpg" alt="">
+                        <img src="../images/nobody.jpg" alt="">
                         <div class="discount">
                             <div class="discount-now">
                                 <p>25%</p>
@@ -133,7 +150,7 @@
                 </div>
                 <div class="flex-1 flex-2">
                     <div class="flex-item product">
-                        <img src="/Front-end/images/cod3.jpg" alt="cod6">
+                        <img src="../images/cod3.jpg" alt="cod6">
                         <div class="discount">
                             <div class="discount-now">
                                 <p>25%</p>
@@ -147,7 +164,7 @@
         
                     </div>
                     <div class="flex-item product">
-                        <img src="/Front-end/images/img_41186_MAIN.png" alt="forza">
+                        <img src="../images/img_41186_MAIN.png" alt="forza">
                         <div class="discount">
                             <div class="discount-now">
                                 <p>25%</p>
@@ -160,7 +177,7 @@
                         </div>
                     </div>
                     <div class="flex-item product">
-                        <img src="/Front-end/images/hades.jpg" alt="hades">
+                        <img src="../images/hades.jpg" alt="hades">
                         <div class="discount">
                             <div class="discount-now">
                                 <p>25%</p>
@@ -175,7 +192,7 @@
                 </div>
                 <div class="flex-1">
                     <div class="flex-item product">
-                        <img src="/Front-end/images/hero_capsule (4).jpg" alt="horizon">
+                        <img src="../images/hero_capsule (4).jpg" alt="horizon">
                         <div class="discount">
                             <div class="discount-now">
                                 <p>25%</p>
@@ -189,7 +206,7 @@
         
                     </div>
                     <div class="flex-item product">
-                        <img src="/Front-end/images/terraria.jpg" alt="terraria">
+                        <img src="../images/terraria.jpg" alt="terraria">
                         <div class="discount">
                             <div class="discount-now">
                                 <p>25%</p>
@@ -202,7 +219,7 @@
                         </div>
                     </div>
                     <div class="flex-item product">
-                        <img src="/Front-end/images/warhammer.jpg" alt="warhammer">
+                        <img src="../images/warhammer.jpg" alt="warhammer">
                         <div class="discount">
                             <div class="discount-now">
                                 <p>25%</p>
@@ -215,7 +232,7 @@
                         </div>
                     </div>
                     <div class="flex-item product">
-                        <img src="/Front-end/images/it-takes-two.jpg" alt="">
+                        <img src="../images/it-takes-two.jpg" alt="">
                         <div class="discount">
                             <div class="discount-now">
                                 <p>25%</p>
@@ -230,7 +247,7 @@
                 </div>
                 <div class="flex-1 flex-2">
                     <div class="flex-item product">
-                        <img src="/Front-end/images/fifa.jpg" alt="cod6">
+                        <img src="../images/fifa.jpg" alt="cod6">
                         <div class="discount">
                             <div class="discount-now">
                                 <p>25%</p>
@@ -244,7 +261,7 @@
         
                     </div>
                     <div class="flex-item product">
-                        <img src="/Front-end/images/mass-efect.jpg" alt="forza">
+                        <img src="../images/mass-efect.jpg" alt="forza">
                         <div class="discount">
                             <div class="discount-now">
                                 <p>25%</p>
@@ -257,7 +274,7 @@
                         </div>
                     </div>
                     <div class="flex-item product">
-                        <img src="/Front-end/images/outer-wilds.jpg" alt="hades">
+                        <img src="../images/outer-wilds.jpg" alt="hades">
                         <div class="discount">
                             <div class="discount-now">
                                 <p>25%</p>
@@ -279,27 +296,27 @@
         <div class="slider-container">
             <div class="slider-g">
                 <div class="game-col">
-                    <img style="height: 145px;" src="/Front-end/images/csgo.webp" alt="Game 1" class="game-image">
+                    <img style="height: 145px;" src="../images/csgo.webp" alt="Game 1" class="game-image">
                     <h3>Game Title 1</h3>
                 </div>
                 <div class="game-col">
-                    <img style="height: 145px;" src="/Front-end/images/default.webp" alt="Game 2" class="game-image">
+                    <img style="height: 145px;" src="../images/default.webp" alt="Game 2" class="game-image">
                     <h3>Game Title 2</h3>
                 </div>
                 <div class="game-col">
-                    <img style="height: 145px;" src="/Front-end/images/war.jpg" alt="Game 3" class="game-image">
+                    <img style="height: 145px;" src="../images/war.jpg" alt="Game 3" class="game-image">
                     <h3>Game Title 3</h3>
                 </div>
                 <div class="game-col">
-                    <img style="height: 145px;" src="/Front-end/images/93h58lnoh9dc1.jpeg" alt="Game 4" class="game-image">
+                    <img style="height: 145px;" src="../images/93h58lnoh9dc1.jpeg" alt="Game 4" class="game-image">
                     <h3>Game Title 4</h3>
                 </div>
                 <div class="game-col">
-                    <img style="height: 145px;" src="/Front-end/images/path.jpg" alt="Game 5" class="game-image">
+                    <img style="height: 145px;" src="../images/path.jpg" alt="Game 5" class="game-image">
                     <h3>Game Title 5</h3>
                 </div>
                 <div class="game-col">
-                    <img style="height: 145px;" src="/Front-end/images/delta.jpg" alt="Game 6" class="game-image">
+                    <img style="height: 145px;" src="../images/delta.jpg" alt="Game 6" class="game-image">
                     <h3>Game Title 6</h3>
                 </div>
             </div>
@@ -310,20 +327,31 @@
         </div>
     </section>
 
-    <section class="footer">
-        <hr>
-        <p>© 2024 GameNexus Corporation. All rights reserved. All trademarks are property of their respective owners in the Kosova and other countries.</p>
-        <!-- <img class="logo-footer" src="#" alt="logo-img"> -->
-        <div class="links">
-        <a href="#">About</a>
-        <a href="#">Store</a>
-        <a href="#">Support</a>
-        <a href="#">Cookies</a>
-        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+    <footer>
+        <div class="info">
+            <div class="footer-image">
+                <img src="../images/valve-logo.jpg" alt="example-logo">
+            </div>
+            <div class="footer-p">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque</p>
+                <div class="p-link">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque</p>
+                    <div class="links">
+                        <a href="../Home/home.html">Home</a>
+                        <a href="../Categories/Categories.html">Categories</a>
+                        <a href="../About/about.html">About us</a>
+                        <a href="../Contact-us/faq.html">Contact us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="socials">
+                <img src="../images/facebook-logo-removebg-preview.png" alt="facebook-logo">
+                <img src="../images/insta2-removebg-preview.png" alt="twitter-logo">
+                <img src="../images/twitter.png" alt="instagram-logo" id="twitter">
+            </div>
         </div>
-        <hr>
-    </section>
-    <script src="/Front-end/Categories/Categories.js"></script>
+    </footer>
+    <script src="../Categories/Categories.js"></script>
+    <script src="../general-functions/functions.js"></script>
 </body>
 </html>

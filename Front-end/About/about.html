@@ -5,17 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About GameNexus</title>
     <script src="https://kit.fontawesome.com/4acdbd152b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/Front-end/About/about.css">
+    <link rel="stylesheet" href="../About/about.css">
 </head>
 <body>
+    <div class="loginSignupPop">
+        <div class="lS login-click">
+            <p>Log in</p>
+        </div>
+        <hr id="pop-line">
+        <div class="lS signup-click">
+            <p>Signup</p>
+        </div>
+        <div class="triangle"></div>
+    </div>
+    <div class="cart-notification-circle">
+        <p class="cart-notification-p"></p>
+    </div>
     <header class="header">
-        <img src="#" alt="logo-img">
+        <div class="logo">
+            <img src="#" alt="logo-img" id="logo1">
+        </div>
         <nav class="right">
-            <a href="#">HOME</a>
-            <a href="#">STORE</a>
-            <a href="#">ABOUT</a>
-            <a href="#">SUPPORT</a>
+            <a href="../Home/home.html">home</a>
+            <a href="../Categories/Categories.html">categories</a>
+            <a href="../About/about.html">About us</a>
+            <a href="../Contact-us/faq.html">Contact us</a>
         </nav>
+        <div class="right-elements">
+            <img src="../images/person_24dp_C7D5E0_FILL0_wght400_GRAD0_opsz24.png" alt="profile-icon"
+                class="profile-logo">
+        </div>
     </header>
 
     <section class="container">
@@ -175,19 +194,30 @@
             </div>
         </div>
     </section>
-    <section class="footer">
-        <hr>
-        <p>© 2024 GameNexus Corporation. All rights reserved. All trademarks are property of their respective owners in the Kosova and other countries.</p>
-        <!-- <img class="logo-footer" src="#" alt="logo-img"> -->
-        <div class="links">
-        <a href="#">About</a>
-        <a href="#">Store</a>
-        <a href="#">Support</a>
-        <a href="#">Cookies</a>
-        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+    <footer>
+        <div class="info">
+            <div class="footer-image">
+                <img src="../images/valve-logo.jpg" alt="example-logo">
+            </div>
+            <div class="footer-p">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque</p>
+                <div class="p-link">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque</p>
+                    <div class="links">
+                        <a href="../Home/home.html">Home</a>
+                        <a href="../Categories/Categories.html">Categories</a>
+                        <a href="../About/about.html">About us</a>
+                        <a href="../Contact-us/faq.html">Contact us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="socials">
+                <img src="../images/facebook-logo-removebg-preview.png" alt="facebook-logo">
+                <img src="../images/insta2-removebg-preview.png" alt="twitter-logo">
+                <img src="../images/twitter.png" alt="instagram-logo" id="twitter">
+            </div>
         </div>
-        <hr>
-    </section>
+    </footer>
+    <script src="../general-functions/functions.js"></script>
 </body>
 </html>

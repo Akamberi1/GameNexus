@@ -5,23 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/4acdbd152b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="registration-form.css">
+    <link rel="stylesheet" href="../Register/registration-form.css">
 </head>
 <body>
     <header class="header">
-        <img src="#" alt="logo-img">
+        <div class="logo">
+            <img src="#" alt="logo-img" id="logo1">
+        </div>
         <nav class="right">
-            <a href="#">STORE</a>
-            <a href="/Front-end/About/about.html">ABOUT</a>
-            <a href="#">SUPPORT</a>
+            <a href="../Home/home.html">home</a>
+            <a href="../Categories/Categories.html">categories</a>
+            <a href="../About/about.html">About us</a>
+            <a href="../Contact-us/faq.html">Contact us</a>
         </nav>
     </header>
-
     <section class="container">
         <section class="form-container">
             <h2>CREATE YOUR ACCOUNT</h2>
 
-            <form id="loginForm" action="/Front-end/Login/login.html" method="get">
+            <form id="loginForm" action="../Login/login.html" method="get">
 
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username" placeholder="Username">
@@ -79,21 +81,6 @@
 
         </section>
     </section>
-
-    <section class="footer">
-        <hr>
-        <p>© 2024 GameNexus Corporation. All rights reserved. All trademarks are property of their respective owners in the Kosova and other countries.</p>
-        <!-- <img class="logo-footer" src="#" alt="logo-img"> -->
-        <div class="links">
-        <a href="#">About</a>
-        <a href="#">Store</a>
-        <a href="#">Support</a>
-        <a href="#">Cookies</a>
-        <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        </div>
-        <hr>
-    </section>
-    <script src="registration-form.js"></script>
+    <script src="../Register/registration-form.js"></script>
 </body>
 </html>
