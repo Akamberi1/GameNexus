@@ -118,7 +118,7 @@ main {
 .overlay {
     width: 100vw;
     height: 93vh;
-    background: url('/Front-end/images/dark-souls.png') no-repeat center center;
+    background: url('../images/dark-souls.png') no-repeat center center;
     background-size: auto;
     background-blend-mode: overlay;
     background-size: cover;
