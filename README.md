@@ -4,3 +4,5 @@ GameNexus is an online game store platform that offers a seamless digital market
 Tech Stack used(until now): Html, Css, Js;
 
 Made by : Arlind Kamberi, Erjona Gërguri
+
+Linku per ne GitHub : https://github.com/Akamberi1/GameNexus/tree/Feature/Testing
