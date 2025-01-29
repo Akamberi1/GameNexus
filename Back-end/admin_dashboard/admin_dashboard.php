@@ -1,0 +1,1 @@
+<?php echo 'Congrats, u are in the admin page!';  ?>
