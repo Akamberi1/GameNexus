@@ -25,5 +25,8 @@ if ($loggedInUser) {
         header("Location: ../Front-end/Home/home.php");
         exit();
     }
+}else{
+    header("Location: ../Front-end/Home/home.php");
+    exit();
 }
 ?>

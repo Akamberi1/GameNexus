@@ -8,6 +8,36 @@ body {
     min-height: 100vh;
 }
 
+aside {
+    width: 12vw;
+    height: 7vh;
+    position: absolute;
+    right: 0;
+    top: 11vh;
+    z-index: 5;
+}
+
+.user-info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+    text-align: center;
+    align-items: center;
+}
+
+.user-info>form {
+    width: 100%;
+    text-align: center;
+}
+
+.user-info>form>button {
+    width: 83%;
+    height: 100%;
+}
+
 
 header {
     width: 100vw;
@@ -444,8 +474,11 @@ main {
 }
 
 .about-this-game {
-    top: 20vh;
-    height: 70vh;
+    width: 50%;
+    height: 37vh;
+    position: relative;
+    left: 17.5vw;
+    top: 18vh;
 }
 
 .p-about {
@@ -479,6 +512,16 @@ main {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.linqet{
+    width: 100%;
+    height: 85%;
+}
+
+.imazhet{
+    width: 100%;
+  height: 100%;
+}
+
 .featured-2 h1 {
     font-size: 2.5rem;
     margin: 0;
@@ -506,7 +549,7 @@ main {
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     top: 1vh;
 }
 

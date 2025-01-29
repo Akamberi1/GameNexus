@@ -1,3 +1,5 @@
+<?php session_start()?>
+
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -320,7 +322,7 @@
             <a href="../Home/home.html">home</a>
             <a href="../Categories/Categories.html">categories</a>
             <a href="../About/about.html">About us</a>
-            <a href="../Contact-us/faq.html">Contact us</a>
+            <a href="../Contact-us/faq.php">Contact us</a>
         </nav>
         <div class="right-elements">
             <img src="../images/shopping_cart_21dp_C7D5E0_FILL0_wght400_GRAD0_opsz20.png"
@@ -329,7 +331,17 @@
                  class="profile-logo">
         </div>
     </header>
+    <aside>
+    <?php if (isset($_SESSION['username'])){ ?>
+    <div class="user-info">
+        <p>Welcome, <?= htmlspecialchars($_SESSION['username']); ?>!</p>
+        <form action="../../Back-end/login/logout.php" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
 
+<?php } ?>
+    </aside>
     <main>
         <div class="featured">
             <h1>Featured</h1>
@@ -352,7 +364,12 @@
                         $imageQuery = "SELECT image_filename FROM product_images WHERE product_id = " . $product['id'] . " ORDER BY image_order LIMIT 1";
                         $imageResult = $conn->query($imageQuery);
                         $image = $imageResult->fetch_assoc()['image_filename'];
-                        echo '<img src="' . $image . '" alt="'.$product['name'].'" class="slide product">';
+                        
+                        echo '
+                        <a href="../Product-details/product-details.php?id=' . $product['id'] . '" class="carousel-linqet">
+                        <img src="' . $image . '" alt="'.$product['name'].'" class="slide product carousel-imazhet">
+                        </a>
+                        ';
                     };
                 };
                 ?>
@@ -394,8 +411,11 @@
                             $price = number_format($product['price'], 2);
 
                             echo '
+                            
                             <div class="flex-item product">
-                                <img src="../images/' . $image . '" alt="' . htmlspecialchars($product['name']) . '">
+                            <a href="../Product-details/product-details.php?id=' . $product['id'] . '" class="linqet">
+                                <img src="../images/' . $image . '" alt="' . htmlspecialchars($product['name']) . '" class="imazhet">
+                            </a>
                                 <div class="discount">
                                     <div class="discount-now">
                                         <p>25%</p>
