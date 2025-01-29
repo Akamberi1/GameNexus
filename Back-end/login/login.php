@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         } else {
             // Redirect to regular user homepage/dashboard
-            header("Location: ../../Front-end/Home/home.php");
+            header("Location: ../index.php");
             exit();
         }
     } else {
