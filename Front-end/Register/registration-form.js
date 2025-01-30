@@ -7,6 +7,7 @@ registerButton[0].addEventListener("click", (event) => {
     const email = document.getElementById("email-address");
     const confirmEmail = document.getElementById("confirm-email");
     const password = document.getElementById("password");
+    const roles = document.getElementById("select-role");
     const country = document.getElementById("select-country");
     const isHuman = document.getElementById("i-am-human").checked;
     const agreeTerms = document.getElementById("agree-terms").checked;
@@ -57,6 +58,12 @@ registerButton[0].addEventListener("click", (event) => {
         return false;
     }
 
+    if (roles.value === "") {
+        alert("Please select your role.");
+        roles.focus();
+        return false;
+    }
+
     if (!isHuman) {
         alert("Please confirm that you are human.");
         return false;
@@ -72,6 +79,7 @@ registerButton[0].addEventListener("click", (event) => {
     console.log("Email:", email.value);
     console.log("Password:", password.value);
     console.log("Country:", country.value);
+    console.log("Roles:", roles.value);
 
     let registrationForm = document.getElementById("registration-form");
 
