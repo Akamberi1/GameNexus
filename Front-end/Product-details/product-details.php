@@ -36,6 +36,24 @@ if (isset($_GET['id'])) {
     echo "Invalid product ID.";
     exit;
 }
+
+$reviewQuery = "SELECT reviews.*, users.username FROM reviews
+                JOIN users ON reviews.user_id = users.id
+                WHERE reviews.product_id = $productId
+                ORDER BY reviews.created_at DESC";
+
+$reviewResult = $conn->query($reviewQuery);
+
+if ($reviewResult->num_rows > 0) {
+    $reviews = [];
+    while ($review = $reviewResult->fetch_assoc()) {
+        $reviews[] = $review;
+    }
+} else {
+    $reviews = [];
+}
+
+
 ?>
 
 
@@ -151,7 +169,7 @@ if (isset($_GET['id'])) {
                             </div>
                         </div>
                     </div>
-                    <div class="categories">
+                    <!-- <div class="categories">
                         <div class="cat">
                             <p>Souls-like</p>
                         </div>
@@ -167,7 +185,7 @@ if (isset($_GET['id'])) {
                         <div class="cat">
                             <p>Co-op</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -200,68 +218,53 @@ if (isset($_GET['id'])) {
             <div class="line-under-h3"></div>
         </div>
         <div class="the-reviews">
-            <div class="h3-reviews">
+            <div class="h3-reviews final-review">
                 <h3>Reviews</h2>
+                <?php if (isset($_SESSION['username'])){ ?>
+                    <div class="add-btn"><img src="../images/add-review-logo.png" alt="add logo"></div>
+                <?php } else { ?>
+                 <!-- <p>You must be logged in to leave a review.</p> -->
+                <?php } ?>
             </div>
-            <!-- <p class="p-desc">“Dark Souls 3's incredible world and awe-inspiring weapon arts make it the fiercest
-                installment yet.” <br>9.5/10 - <span class="games-span">IGN</span></p>
-            <p class="p-desc">“Sprawling level design, thrilling combat, and masterful indirect storytelling make Dark
-                Souls 3 the best Dark Souls yet.”<br>94% - <span class="games-span">PC Gamer</span></p>
-            <p class="p-desc">“Dark Souls III successfully replicates the winning formula of the Souls series, a
-                wondrous combination of majestic boss battles, incredible layered environments full of secrets, and
-                precise combat that can make other action RPGs difficult to play once you’ve mastered the
-                art.”<br>9.25/10 - <span class="games-span">Game Informer</span></p> -->
             <div class="line-under-h3"></div>
         </div>
-
-        <div class="featured-2">
+        <?php if (!empty($reviews)): ?>
+        <?php foreach ($reviews as $review): ?>
+            <div class="review">
+                <div class="Text">
+                    <div class="review-header">
+                        <p><strong><?= htmlspecialchars($review['username']) ?></strong> - 
+                        <?= $review['created_at']?></p>
+                    </div>
+                    <div class="review-text">
+                        <p><?= nl2br(htmlspecialchars($review['review_text'])) ?></p>
+                    </div>
+                </div>
+                <div class="review-image">
+                        <img src="../images/<?= htmlspecialchars($review['image']) ?>" alt="Review Image" />
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p class="no-reviews-yet">No reviews yet. Be the first to review this game!</p>
+    <?php endif; ?>
+        
+    <div class="review-form">
+        <h3 id="leave-review-h3">Leave a Review</h3>
+        <form action="../../Back-end/Reviews/submit_review.php" method="POST" enctype="multipart/form-data" id="ur-review-form">
+            <input type="hidden" name="product_id" value="<?= $productId; ?>">
+            <textarea name="review_text" placeholder="Write your review..." required></textarea>
+            <input type="file" name="review_image" accept="image/*">
+            <button type="submit">Submit Review</button>
+        </form>
+    </div>
+    </main>
+    <div class="featured-2">
             <div class="line-under-h3 another-line"></div>
             <div class="head-2">
                 <h3>Similar games</h3S>
             </div>
             <div class="products">
-                <!-- <div class="flex-1">
-                    <div class="flex-item product">
-                        <img src="../images/battlefield2042.jpg" alt="battlefield2042">
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/jedi.jpg" alt="jedi survivor">
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/resident-evil.jpg" alt="resident-evil">
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/nobody.jpg" alt="">
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <div class="flex-item product">
-                        <img src="../images/horizon.jpg" alt="horizon">
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/terraria.jpg" alt="terraria">
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/warhammer.jpg" alt="warhammer">
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/it-takes-two.jpg" alt="">
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <div class="flex-item product">
-                        <img src="../images/cod3.jpg" alt="horizon">
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/fifa.jpg" alt="terraria">
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/mass-efect.jpg" alt="warhammer">
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/hades.jpg" alt="">
-                    </div>
-                </div> -->
 
                 <?php
                 // Include the database connection file
@@ -317,7 +320,6 @@ if (isset($_GET['id'])) {
                 ?>
             </div>
         </div>
-    </main>
     <footer>
         <div class="info">
             <div class="footer-image">

@@ -18,3 +18,15 @@ addToCartBtn[0].addEventListener("click",()=>{
     }
     
 })
+
+const addBtn = document.querySelector(".add-btn");
+const reviewForm = document.querySelector(".review-form");
+
+
+addBtn.addEventListener("click", function() {
+    if (reviewForm.style.display === 'none' || reviewForm.style.display === '') {
+        reviewForm.style.display = 'flex';  // Show the form
+    } else {
+        reviewForm.style.display = 'none';   // Hide the form
+    }
+});
