@@ -18,7 +18,7 @@ if ($loggedInUser) {
   
     if ($loggedInUser['role'] === 'admin') {
        
-        header("Location: ../admin_dashboard/admin_dashboard.php");
+        header("Location: admin_dashboard/admin_dashboard.php");
         exit();
     } else {
     

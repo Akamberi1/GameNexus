@@ -1,0 +1,209 @@
+body {
+    background-color: #1b2a3d;
+    color: #c7d5e0;
+}
+
+
+h1 {
+    position: relative;
+    left: 0.4vw;
+    top: 1vh;
+    text-align: center;
+}
+
+.img-link {
+    width: 40px;
+    height: 40px;
+    display: block;
+    position: relative;
+    top: 3vh;
+    left: 1vw;
+}
+
+.img-link>img {
+    width: 100%;
+    height: 100%;
+}
+
+.products {
+    width: 98vw;
+    height: 200vh;
+    border: 3px solid #c7d5e0;
+    position: relative;
+    left: 0.3vw;
+    top: 4vh;
+}
+
+.about {
+    width: 90%;
+    height: 7vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.about-divs {
+    width: 7%;
+    height: 56%;
+    border-bottom: 1px solid #c7d5e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1vh;
+    border: 2px solid black;
+}
+
+.the-product {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.product-div {
+    width: 7%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    right: 1vw;
+}
+
+#insertForm {
+    display: none;
+    width: 20vw;
+    height: 60vh;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #c7d5e0;
+    padding: 20px;
+}
+
+.forma {
+    width: 100%;
+    height: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.forma>input {
+    height: 6%;
+}
+
+.forma>button {
+    margin-top: 1vh;
+    height: 12%;
+    background-color: lightblue;
+    border: none;
+    border-radius: 3px;
+}
+
+h3 {
+    width: 50%;
+    height: 5%;
+    text-align: center;
+}
+
+#editForm {
+    display: none;
+    width: 20vw;
+    height: 60vh;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #c7d5e0;
+    padding: 20px;
+}
+
+.forma2 {
+    width: 100%;
+    height: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.forma2>input {
+    height: 6%;
+}
+
+.forma2>button {
+    margin-top: 1vh;
+    height: 12%;
+    background-color: lightblue;
+    border: none;
+    border-radius: 3px;
+}
+
+.insert {
+    height: 5vh;
+    border: 1px solid black;
+    cursor: pointer;
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: absolute;
+    right: 2vw;
+    top: 1vh;
+    color: black;
+}
+
+.editBtn {
+    width: 40%;
+    height: 50%;
+    background-color: lightblue;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formDelete {
+    display: inline;
+    width: 40%;
+    height: 50%;
+}
+
+.delBtn {
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.desc {
+    width: 7%;
+    height: 100%;
+    overflow-y: auto;
+    word-break: break-word;
+    white-space: normal;
+    text-align: center;
+    display: block;
+}
