@@ -6,6 +6,32 @@
 
 body {
     min-height: 100vh;
+    background-color: #1b2838;
+}
+
+.user-info {
+    width: 10vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    top: 10vh;
+    right: 2.5vw;
+}
+
+.user-info>form {
+    width: 100%;
+  text-align: center;
+  height: 35%;
+}
+
+.user-info>form>button {
+    width: 83%;
+    height: 100%;
 }
 
 
@@ -161,43 +187,56 @@ nav a::selection {
 
 main {
     width: 100vw;
-    height: 165vh;
+    height: 135vh;
     background-color: #1b2838;
+}
+
+aside{
+    width: 100%;
+  height: 71vh;
+  background-color: #1b2838;
+  position: relative;
+  top: 7vh;
+}
+
+.special-section{
+    width: 100%;
+  height: 5vh;
+  background-color: #1b2838;
+  
 }
 
 
 .buy-it {
     width: 64vw;
-    height: 53vh;
-    margin: auto;
-    position: relative;
-    top: 8vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    height: 83%;
+  margin: auto;
+  position: relative;
+  top: 8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .shp-h {
     width: 100%;
-    height: 5vh;
+    height: 4.5%;
     font-size: 22px;
     color: white;
     font-weight: bolder;
 }
 
 .shopping {
-    width: 100%;
-    height: 50vh;
-
+    width: 62%;
+    height: 84%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 
 .shopping-section {
-    width: 66%;
-    height: 100%;
-
+    width: 100%;
+    height: 50%;
     display: flex;
     flex-direction: column;
 
@@ -206,7 +245,7 @@ main {
 
 .shopping-product {
     width: 100%;
-    height: 21vh;
+    height: 50%;
     display: flex;
     justify-content: space-between;
     background-color: #15202e;
@@ -250,7 +289,7 @@ main {
     width: 20px;
     height: 20px;
     position: relative;
-    bottom: 8.8vh;
+    bottom: 6.8vh;
     right: 0.1vw;
 }
 
@@ -279,11 +318,10 @@ main {
     width: 70%;
     height: 10%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     position: relative;
-    bottom: 5vh;
-    right: 1vw;
+    bottom: 2vh;
+    left: 1.5vw;
 }
 
 .add>p {
@@ -293,11 +331,15 @@ main {
     text-decoration: underline;
 }
 
-.remove>p {
-    font-size: 14px;
-    color: #556a76;
-    text-transform: capitalize;
-    text-decoration: underline;
+.remove>form>button{
+    background-color: transparent;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  color: white;
+  cursor: pointer;
 }
 
 .vertical-line {
@@ -311,16 +353,18 @@ main {
 
 
 .shoppingRemove {
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  left: 18vw;
 }
 
 .continue-shopping {
-    width: 25%;
-    height: 45%;
+    height: 100%;
+  width: 50%;
     background-color: #3d4450;
     border-radius: 2.2px;
 
@@ -330,6 +374,17 @@ main {
 
     cursor: pointer;
 
+}
+
+.shoppingRemove > form > button{
+    background-color: transparent;
+  border-bottom: 1px solid white;
+  padding-bottom: 3px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: white;
+  cursor: pointer;
 }
 
 .continue-shopping>p {
@@ -346,13 +401,15 @@ main {
 
 .total {
     width: 29%;
-    height: 47%;
-    background-color: #15202e;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  height: 23vh;
+  background-color: #15202e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 5vh;
 }
 
 .estimated-p {
@@ -394,6 +451,21 @@ main {
     cursor: pointer;
 }
 
+.continue-to-payment-btn > form {
+    width: 100%;
+    height: 100%;
+}
+
+.continue-to-payment-btn > form > button{
+    width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
 .continue-to-payment-btn>p {
     color: white;
     font-size: 17px;
@@ -401,21 +473,19 @@ main {
 
 .recommended {
     width: 42.6vw;
-    height: 90vh;
-    position: relative;
-    left: 17.6vw;
-    top: 2vh;
+    height: 100%;
+  position: relative;
+  left: 17.6vw;
 }
 
 .products {
     width: 100%;
-    height: 100%;
-    margin: auto;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  height: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .flex-1 {
@@ -524,13 +594,12 @@ main {
 
 .rec-h2 {
     font-size: 20px;
-    color: #c7d5e0;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    position: relative;
-    left: 17.5vw;
-    width: 30vw;
-    top: 1vh;
+  color: #c7d5e0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  width: 30vw;
+  height: 5%;
 }
 
 footer {
@@ -541,6 +610,7 @@ footer {
     align-items: center;
     background-color: #111a24;
     position: relative;
+  top: 7vh;
 }
 
 .info {

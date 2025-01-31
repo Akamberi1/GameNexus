@@ -43,7 +43,7 @@ let circleNotification = document.getElementsByClassName("cart-notification-circ
 
 shoppingLogo[0].addEventListener("click",()=>{
 
-    window.location.href = '../Cart/cart.html';
+    window.location.href = '../Cart/cart.php';
 
     circleNotification[0].style.display = "";
 

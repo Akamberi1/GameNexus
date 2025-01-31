@@ -71,8 +71,7 @@ if ($reviewResult->num_rows > 0) {
     <link rel="stylesheet" href="../Product-details/product-details.css">
 </head>
 
-<aside>
-    <?php if (isset($_SESSION['username'])){ ?>
+<?php if (isset($_SESSION['username'])){ ?>
     <div class="user-info">
         <p>Welcome, <?= htmlspecialchars($_SESSION['username']); ?>!</p>
         <form action="../../Back-end/login/logout.php" method="post">
@@ -81,7 +80,6 @@ if ($reviewResult->num_rows > 0) {
     </div>
 
 <?php } ?>
-    </aside>
 
 <body>
     <div class="loginSignupPop">
@@ -202,7 +200,10 @@ if ($reviewResult->num_rows > 0) {
                     <p><?= htmlspecialchars($product['price']) ?>$</p>
                 </div>
                 <div class="text">
-                    <p>Add to cart</p>
+                <form action="../../Back-end/Cart/cart_functionality.php" method="post">
+                    <input type="hidden" name="product_id" value="<?= $product['id']; ?>">
+                    <button type="submit" class="add-to-cart-btn" name="add_to_cart">Add to Cart</button>
+                </form>
                 </div>
             </div>
             <div class="windows">

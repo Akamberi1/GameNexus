@@ -300,6 +300,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="../Home/home.css">
 </head>
+<?php if (isset($_SESSION['username'])){ ?>
+    <div class="user-info">
+        <p>Welcome, <?= htmlspecialchars($_SESSION['username']); ?>!</p>
+        <form action="../../Back-end/login/logout.php" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+
+<?php } ?>
 <body>
     <div class="loginSignupPop">
         <div class="lS login-click">
@@ -331,17 +340,6 @@
                  class="profile-logo">
         </div>
     </header>
-    <aside>
-    <?php if (isset($_SESSION['username'])){ ?>
-    <div class="user-info">
-        <p>Welcome, <?= htmlspecialchars($_SESSION['username']); ?>!</p>
-        <form action="../../Back-end/login/logout.php" method="post">
-            <button type="submit">Logout</button>
-        </form>
-    </div>
-
-<?php } ?>
-    </aside>
     <main>
         <div class="featured">
             <h1>Featured</h1>

@@ -3,6 +3,32 @@ body {
     color: #c7d5e0;
 }
 
+.user-info {
+    width: 10vw;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: white;
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  top: 1vh;
+  right: 1.5vw;
+  z-index: 5;
+}
+
+.user-info>form {
+    width: 100%;
+  text-align: center;
+  height: 35%;
+}
+
+.user-info>form>button {
+    width: 83%;
+    height: 100%;
+}
+
 
 h1 {
     position: relative;

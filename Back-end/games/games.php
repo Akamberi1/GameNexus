@@ -16,7 +16,6 @@ $conn = $db->getConnection(); ?>
     <title>Document</title>
     <link rel="stylesheet" href="../games/games.css">
 </head>
-<aside>
 <?php if (isset($_SESSION['username'])){ ?>
     <div class="user-info">
         <p>Welcome, <?= htmlspecialchars($_SESSION['username']); ?>!</p>
@@ -26,7 +25,6 @@ $conn = $db->getConnection(); ?>
     </div>
 
 <?php } ?>
-</aside>
 <body>
     <a href="../admin_dashboard/admin_dashboard.php" class="img-link"><img src="../../Front-end/images/return-icon.png" alt="return-icon"></a>
     <h1>Games</h1>

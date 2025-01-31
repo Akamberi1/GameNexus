@@ -12,8 +12,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="../Contact-us/faq.css">
 </head>
-<aside>
-    <?php if (isset($_SESSION['username'])){ ?>
+
+<?php if (isset($_SESSION['username'])){ ?>
     <div class="user-info">
         <p>Welcome, <?= htmlspecialchars($_SESSION['username']); ?>!</p>
         <form action="../../Back-end/login/logout.php" method="post">
@@ -22,7 +22,6 @@
     </div>
 
 <?php } ?>
-    </aside>
 <body>
     <div class="loginSignupPop">
         <div class="lS login-click">
