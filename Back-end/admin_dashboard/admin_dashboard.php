@@ -1,4 +1,47 @@
-<!-- <?php echo 'Congrats, u are in the admin page!';  ?> -->
+<?php
+@include '../config.php';
+
+class Database {
+    private $host = "localhost";
+    private $dbname = "GameNexus";
+    private $username = "root";
+    private $password = "";
+    public $conn;
+
+    public function __construct() {
+        $this->conn = new mysqli($this->host, $this->username, $this->password, $this->dbname);
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error);
+        }
+    }
+
+    public function getConnection() {
+        return $this->conn;
+    }
+}
+
+class Dashboard {
+    private $db;
+
+    public function __construct() {
+        $database = new Database();
+        $this->db = $database->getConnection();
+    }
+
+    public function getCount($table) {
+        $query = "SELECT COUNT(*) AS total FROM $table";
+        $result = $this->db->query($query);
+        return ($result->num_rows > 0) ? $result->fetch_assoc()['total'] : 0;
+    }
+}
+
+$dashboard = new Dashboard();
+
+$totalUsers = $dashboard->getCount('users');
+$totalGames = $dashboard->getCount('products');
+$totalReviews = $dashboard->getCount('reviews');
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +66,7 @@
         <i class="fa-solid fa-bars"></i>
         </div>
         <div class="header-left">
+          <h2 style="color: white;">Welcome, Admin! </h2>
         </div>
         <div class="header-right">
         <i class="fa-solid fa-bell"></i>
@@ -75,7 +119,7 @@
               <h2>Users</h2>
               <i class="fa-solid fa-users"></i>
             </div>
-            <h1>4,021</h1>
+            <h1><?php echo $totalUsers; ?></h1>
           </div>
 
           <div class="card">
@@ -83,7 +127,7 @@
               <h2>Games</h2>
               <i class="fa-solid fa-gamepad"></i>
             </div>
-            <h1>8,731</h1>
+            <h1><?php echo $totalGames; ?></h1>
           </div>
 
           <div class="card">
@@ -91,7 +135,7 @@
               <h2>Reviews</h2>
               <i class="fa-solid fa-message"></i>
             </div>
-            <h1>1,962</h1>
+            <h1><?php echo $totalReviews; ?></h1>
           </div>
 
         </div>

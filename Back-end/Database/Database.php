@@ -1,9 +1,9 @@
 <?php
 class Database {
     private $host = 'localhost';
+    private $dbname = 'gamenexus'; // Your database name
     private $username = 'root'; // Default XAMPP username
     private $password = ''; // Default XAMPP password
-    private $dbname = 'gamenexus'; // Your database name
     private $conn;
 
     // Constructor to establish the connection
