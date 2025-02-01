@@ -106,11 +106,11 @@ body {
   .main-container {
     grid-area: main;
     overflow-y: auto;
-}
-    .main-container h1{
-        color: white;
-    }
-  
+  }
+
+  .main-container h1{
+    color: white;
+  }
   
   /* Medium <= 992px */
   @media screen and (max-width: 992px) {
@@ -186,7 +186,7 @@ th, td {
 th {
     background-color: #0f3460;
 }
-.insert {
+.insert-btn{
     background-color: #4CAF50;
     color: white;
     padding: 10px 15px;

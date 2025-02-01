@@ -1,4 +1,5 @@
 <?php
+session_start();
 @include '../config.php';
 
 class Database {
@@ -99,7 +100,7 @@ $totalReviews = $dashboard->getCount('reviews');
             <a href="../../Front-end/About/about.html"><i class="fa-solid fa-address-card"></i>  About</a>
           </li>
           <li class="sidebar-list-item">
-            <a href="#"><i class="fa-solid fa-users"></i>  Users</a>
+            <a href="../users_dashboard/Users.php"><i class="fa-solid fa-users"></i>  Users</a>
           </li>
           <li class="sidebar-list-item">
             <a href="#"><i class="fa-solid fa-gamepad"></i> Games</a>
