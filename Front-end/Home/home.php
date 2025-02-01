@@ -353,7 +353,7 @@
                 $db = new Database();
                 $conn = $db->getConnection();
 
-                $query = "SELECT * FROM products LIMIT 3";
+                $query = "SELECT * FROM products LIMIT 6";
                 $result = $conn->query($query);
 
 

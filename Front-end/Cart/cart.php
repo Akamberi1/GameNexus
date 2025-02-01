@@ -154,7 +154,7 @@ if ($checkoutSuccess) {
             </div>
             <form action="../../Back-end/Cart/cart_functionality.php" method="post">
                     <input type="hidden" name="product_id" value="<?= $product['id']; ?>">
-                    <button type="submit" class="add-to-cart-btn" name="add_to_cart">Remove all items</button>
+                    <button type="submit" class="add-to-cart-btn" name="clear_cart">Remove all items</button>
             </form>
         </div>
     </div>

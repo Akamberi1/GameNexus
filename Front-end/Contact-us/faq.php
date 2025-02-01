@@ -148,7 +148,7 @@
             </div>
         </main>
         <section class="contact-us">
-            <form action="#" class="theForm" id="contact-us-form">
+            <form action="../../Back-end/Contact/contact_form.php" method="post" class="theForm" id="contact-us-form">
                 <h2 class="contact-p">Contact Us</h2>
                 <div class="child">
                     <label for="username">Username</label>
@@ -166,6 +166,7 @@
                     <label class="txt-label" for="message">What can we help with?</label>
                     <textarea class="inputs textarea" name="message" id="message"></textarea>
                 </div>
+                <input type="hidden" name="user_id" value="<?= isset($_SESSION['user_id']) ? $_SESSION['user_id'] : ''; ?>">
                 <button type="submit" id="submit-contact-btn">Submit</button>
             </form>
         </section>
@@ -196,6 +197,12 @@
     </footer>
     <script src="../Contact-us/faq.js"></script>
     <script src="../general-functions/functions.js"></script>
+    <?php if (isset($_SESSION['contact_status'])) { ?>
+        <script>
+            alert("<?= $_SESSION['contact_status']; ?>");
+        </script>
+        <?php unset($_SESSION['contact_status']); ?>
+    <?php } ?>
 </body>
 
 </html>
