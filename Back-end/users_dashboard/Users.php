@@ -111,9 +111,13 @@ $database->closeConnection();
     <link rel="stylesheet" href="../users_dashboard/Users.css">
     <style>
         .button { padding: 5px 10px; margin: 5px; cursor: pointer; }
-        .edit-btn { background-color: #4CAF50; color: white; padding: 10px 10px; }
-        .delete-btn { background-color: #f44336; color: white; padding: 10px 10px; }
-        .no-users-message { color: red; font-size: 18px; font-weight: bold; }
+        .edit-btn { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px; }
+        .delete-btn { background-color: #f44336; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px; }
+        .no-users-message { font-size: 18px; font-weight: bold; }
+        @media screen and (max-width: 992px) {
+          .delete-btn { padding: 10px 10px; margin: 5px 0; }
+          .edit-btn { padding: 10px 17px; margin: 5px 0; }
+      }   
     </style>
   </head>
   <body>
@@ -164,90 +168,70 @@ $database->closeConnection();
 
       <main class="main-container">
         <div class="container">
-          <h1>Users</h1>
-          <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th>Created_at</th>
-                        <th>Actions</th> <!-- New column for actions -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($users as $user): ?>
-                      <tr>
-                                <td><?php echo htmlspecialchars($user['id']); ?></td>
-                                <td><?php echo htmlspecialchars($user['username']); ?></td>
-                                <td><?php echo htmlspecialchars($user['email']); ?></td>
-                                <td><?php echo htmlspecialchars($user['role']); ?></td>
-                                <td><?php echo htmlspecialchars($user['created_at']); ?></td>
-                                <td>
-                                    <!-- Edit and Delete buttons -->
-                                    <button class="edit-btn" onclick="editUser(<?php echo $user['id']; ?>)">Edit</button>
-                                    <button class="delete-btn" onclick="deleteUser(<?php echo $user['id']; ?>)">Delete</button>
-                                </td>
-                            </tr>
+        <h1>Users</h1>
+    <?php if (empty($users)): ?>
+        <p style="color: red;" class="no-users-message">No accounts found in the database.</p>
+    <?php else: ?>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+            <?php foreach ($users as $u): ?>
+                <tr id="user-<?= $u['id'] ?>">
+                    <td><?= $u['id'] ?></td>
+                    <td><?= $u['username'] ?></td>
+                    <td><?= $u['email'] ?></td>
+                    <td><?= $u['role'] ?></td>
+                    <td>
+                        <button class="edit-btn" onclick="editUser(<?= $u['id'] ?>)">Edit</button>
+                        <button class="delete-btn" onclick="deleteUser(<?= $u['id'] ?>)">Delete</button>
+                    </td>
+                </tr>
             <?php endforeach; ?>
-                </tbody>
-            </table>
-          </div>
-          <button class="insert-btn" onclick="insertUser()">Insert</button>
-          <button class="logout">Logout</button>
-        </div>
-      </main>
-    </div>
+        </table>
+    <?php endif; ?>
+    <button class="insert-btn" onclick="insertUser()">Insert</button>
+    <button class="logout" onclick="window.location.href='login.php'">Logout</button>
 
     <script src="../admin_dashboard/admin_dashboard.js"></script>
     <script>
-         function deleteUser(userId) {
-            if (confirm('Are you sure you want to delete this user?')) {
-                $.ajax({
-                    url: '', // Same file
-                    type: 'POST',
-                    data: {
-                        action: 'delete',
-                        user_id: userId
-                    },
-                    success: function(response) {
-                        alert(response);
-                        // Remove the row from the table after successful deletion
-                        $('#user-row-' + userId).remove();
-
-                        // Check if there are no users left, and show the "No accounts found" message
-                        if ($('tbody tr').length === 0) {
-                            $('body').append('<p class="no-users-message">No accounts found in the database.</p>');
-                        }
+          function deleteUser(id) {
+            if (confirm('Delete user?')) {
+                $.post('', { action: 'delete', id: id }, function(response) {
+                    alert(response);
+                    $('#user-' + id).remove();
+                    if ($('table tr').length === 1) {
+                        $('table').after('<p>No accounts found in the database.</p>').remove();
                     }
                 });
             }
         }
 
-        // Insert new user - Show prompt and send data via AJAX
-        function insertUser() {
-            const username = prompt('Enter username:');
-            const email = prompt('Enter email:');
-            const password = prompt('Enter password:');
-            const role = prompt('Enter role (e.g., admin, user):');
+        function editUser(id) {
+            let username = prompt('New username:');
+            let email = prompt('New email:');
+            let role = prompt('New role:');
+            if (username && email && role) {
+                $.post('', { action: 'update', id: id, username: username, email: email, role: role }, function(response) {
+                    alert(response);
+                    location.reload();
+                });
+            }
+        }
 
+        function insertUser() {
+            let username = prompt('Username:');
+            let email = prompt('Email:');
+            let password = prompt('Password:');
+            let role = prompt('Role:');
             if (username && email && password && role) {
-                $.ajax({
-                    url: '', // Same file
-                    type: 'POST',
-                    data: {
-                        action: 'insert',
-                        username: username,
-                        email: email,
-                        password: password,
-                        role: role
-                    },
-                    success: function(response) {
-                        alert(response);
-                        location.reload(); // Reload the page to reflect changes
-                    }
+                $.post('', { action: 'insert', username: username, email: email, password: password, role: role }, function(response) {
+                    alert(response);
+                    location.reload();
                 });
             }
         }
