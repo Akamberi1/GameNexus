@@ -1,14 +1,12 @@
 <?php
-// Start session
 session_start();
 
-// Database connection
 class Database {
     private $host = "localhost";
-    private $db_name = "GameNexus"; 
-    private $username = "root"; 
-    private $password = ""; 
-    public $conn;
+    private $db_name = "GameNexus";
+    private $username = "root";
+    private $password = "";
+    private $conn;
 
     public function __construct() {
         $this->conn = new mysqli($this->host, $this->username, $this->password, $this->db_name);
@@ -38,7 +36,6 @@ class Database {
     }
 }
 
-// User operations
 class User {
     private $db;
 
@@ -46,76 +43,57 @@ class User {
         $this->db = $db;
     }
 
-    public function deleteUser($userId) {
-        $query = "DELETE FROM users WHERE id = ?";
-        return $this->db->executeQuery($query, ['i', $userId]);
-    }
-
-    public function getUserById($userId) {
-        $query = "SELECT id, username, email, role FROM users WHERE id = ?";
-        $stmt = $this->db->executeQuery($query, ['i', $userId]);
+    public function getAllUsers() {
+        $query = "SELECT * FROM users ORDER BY id ASC";
+        $stmt = $this->db->executeQuery($query);
         $result = $stmt->get_result();
-        return $result->fetch_assoc();
-    }
-
-    public function updateUser($userId, $username, $email, $role) {
-        $query = "UPDATE users SET username = ?, email = ?, role = ? WHERE id = ?";
-        return $this->db->executeQuery($query, ['sssi', $username, $email, $role, $userId]);
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     public function insertUser($username, $email, $password, $role) {
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         $query = "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)";
-        return $this->db->executeQuery($query, ['ssss', $username, $email, $password, $role]);
+        return $this->db->executeQuery($query, ['ssss', $username, $email, $hashedPassword, $role]);
     }
 
-    public function getAllUsers() {
-        $query = "SELECT id, username, password, email, role, created_at FROM users";
-        $stmt = $this->db->executeQuery($query);
-        $result = $stmt->get_result();
-        $users = [];
-        while ($row = $result->fetch_assoc()) {
-            $users[] = $row;
-        }
-        return $users;
+    public function updateUser($id, $username, $email, $role) {
+        $query = "UPDATE users SET username = ?, email = ?, role = ? WHERE id = ?";
+        return $this->db->executeQuery($query, ['sssi', $username, $email, $role, $id]);
+    }
+
+    public function deleteUser($id) {
+        $query = "DELETE FROM users WHERE id = ?";
+        $this->db->executeQuery($query, ['i', $id]);
+        
+        $this->db->executeQuery("SET @count = 0;");
+        $this->db->executeQuery("UPDATE users SET id = @count:= @count + 1;");
+        $this->db->executeQuery("ALTER TABLE users AUTO_INCREMENT = 1;");
+        return true;
     }
 }
 
 $database = new Database();
 $user = new User($database);
 
-// Handle user deletion (AJAX)
-if (isset($_POST['action']) && $_POST['action'] == 'delete' && isset($_POST['user_id'])) {
-    $userId = $_POST['user_id'];
-    $result = $user->deleteUser($userId);
-    echo $result ? 'User deleted successfully' : 'Error deleting user';
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
+    switch ($_POST['action']) {
+        case 'insert':
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $role = $_POST['role'];
+            echo $user->insertUser($username, $email, $password, $role) ? 'User added successfully' : 'Error adding user';
+            break;
+        case 'update':
+            echo $user->updateUser($_POST['id'], $_POST['username'], $_POST['email'], $_POST['role']) ? 'User updated' : 'Error updating user';
+            break;
+        case 'delete':
+            echo $user->deleteUser($_POST['id']) ? 'User deleted' : 'Error deleting user';
+            break;
+    }
     exit;
 }
 
-// Handle user update
-if (isset($_POST['action']) && $_POST['action'] == 'update' && isset($_POST['user_id'])) {
-    $userId = $_POST['user_id'];
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $role = $_POST['role'];
-
-    $result = $user->updateUser($userId, $username, $email, $role);
-    echo $result ? 'User updated successfully' : 'Error updating user';
-    exit;
-}
-
-// Handle user insert
-if (isset($_POST['action']) && $_POST['action'] == 'insert') {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Encrypt password
-    $role = $_POST['role'];
-
-    $result = $user->insertUser($username, $email, $password, $role);
-    echo $result ? 'User inserted successfully' : 'Error inserting user';
-    exit;
-}
-
-// Fetch users for display
 $users = $user->getAllUsers();
 $database->closeConnection();
 ?>
@@ -133,8 +111,9 @@ $database->closeConnection();
     <link rel="stylesheet" href="../users_dashboard/Users.css">
     <style>
         .button { padding: 5px 10px; margin: 5px; cursor: pointer; }
-        .edit-btn { background-color: #4CAF50; color: white; }
-        .delete-btn { background-color: #f44336; color: white; }
+        .edit-btn { background-color: #4CAF50; color: white; padding: 10px 10px; }
+        .delete-btn { background-color: #f44336; color: white; padding: 10px 10px; }
+        .no-users-message { color: red; font-size: 18px; font-weight: bold; }
     </style>
   </head>
   <body>
@@ -192,42 +171,39 @@ $database->closeConnection();
                     <tr>
                         <th>ID</th>
                         <th>Username</th>
-                        <th>Password</th>
                         <th>Email</th>
                         <th>Role</th>
                         <th>Created_at</th>
+                        <th>Actions</th> <!-- New column for actions -->
                     </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($users as $user): ?>
-                <tr id="user-row-<?php echo $user['id']; ?>">
-                    <td><?php echo htmlspecialchars($user['id']); ?></td>
-                    <td><?php echo htmlspecialchars($user['username']); ?></td>
-                    <td><?php echo htmlspecialchars($user['email']); ?></td>
-                    <td><?php echo htmlspecialchars($user['role']); ?></td>
-                    <td><?php echo htmlspecialchars($user['created_at']); ?></td>
-                    <td>
-                        <button class="edit-btn button" onclick="editUser(<?php echo $user['id']; ?>)">Edit</button>
-                        <button class="delete-btn button" onclick="deleteUser(<?php echo $user['id']; ?>)">Delete</button>
-                    </td>
-                </tr>
+                    <?php foreach ($users as $user): ?>
+                      <tr>
+                                <td><?php echo htmlspecialchars($user['id']); ?></td>
+                                <td><?php echo htmlspecialchars($user['username']); ?></td>
+                                <td><?php echo htmlspecialchars($user['email']); ?></td>
+                                <td><?php echo htmlspecialchars($user['role']); ?></td>
+                                <td><?php echo htmlspecialchars($user['created_at']); ?></td>
+                                <td>
+                                    <!-- Edit and Delete buttons -->
+                                    <button class="edit-btn" onclick="editUser(<?php echo $user['id']; ?>)">Edit</button>
+                                    <button class="delete-btn" onclick="deleteUser(<?php echo $user['id']; ?>)">Delete</button>
+                                </td>
+                            </tr>
             <?php endforeach; ?>
                 </tbody>
             </table>
           </div>
           <button class="insert-btn" onclick="insertUser()">Insert</button>
-          <button class="logout" onclick="logout()">Logout</button>
+          <button class="logout">Logout</button>
         </div>
       </main>
     </div>
 
     <script src="../admin_dashboard/admin_dashboard.js"></script>
     <script>
-      function logout() {
-        window.location.href = "../../Front-end/Login/login.html"; // Change to your login page URL
-    }
-       // Delete user via AJAX
-       function deleteUser(userId) {
+         function deleteUser(userId) {
             if (confirm('Are you sure you want to delete this user?')) {
                 $.ajax({
                     url: '', // Same file
@@ -238,32 +214,13 @@ $database->closeConnection();
                     },
                     success: function(response) {
                         alert(response);
+                        // Remove the row from the table after successful deletion
                         $('#user-row-' + userId).remove();
-                    }
-                });
-            }
-        }
 
-        // Edit user - Open edit form in a popup or redirect to a separate page
-        function editUser(userId) {
-            const username = prompt('Enter new username:');
-            const email = prompt('Enter new email:');
-            const role = prompt('Enter new role:');
-
-            if (username && email && role) {
-                $.ajax({
-                    url: '', // Same file
-                    type: 'POST',
-                    data: {
-                        action: 'update',
-                        user_id: userId,
-                        username: username,
-                        email: email,
-                        role: role
-                    },
-                    success: function(response) {
-                        alert(response);
-                        location.reload(); // Reload the page to reflect changes
+                        // Check if there are no users left, and show the "No accounts found" message
+                        if ($('tbody tr').length === 0) {
+                            $('body').append('<p class="no-users-message">No accounts found in the database.</p>');
+                        }
                     }
                 });
             }
