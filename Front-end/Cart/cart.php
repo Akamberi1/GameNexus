@@ -1,3 +1,21 @@
+<?php
+require_once '../../Back-end/Cart/cart.php';
+
+$cart = new Cart();
+$cartItems = $cart->getCart();
+
+$checkoutSuccess = isset($_SESSION['checkout_success']) && $_SESSION['checkout_success'];
+
+if ($checkoutSuccess) {
+    // Clear the session flag after showing the alert
+    unset($_SESSION['checkout_success']);
+}
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +25,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="cart.css">
 </head>
+<?php if (isset($_SESSION['username'])){ ?>
+    <div class="user-info">
+        <p>Welcome, <?= htmlspecialchars($_SESSION['username']); ?>!</p>
+        <form action="../../Back-end/login/logout.php" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
 
+<?php } ?>
 <body>
     <div class="loginSignupPop">
         <div class="lS login-click">
@@ -41,7 +67,49 @@
             <h2 class="shp-h">Your shopping cart</h2>
             <div class="shopping">
                 <div class="shopping-section">
-                    <div class="shopping-product">
+                <?php 
+                require_once "../../Back-end/Database/Database.php"; // Adjust path if necessary
+
+                $totalPrice = 0;
+
+                $db = new Database();
+                $conn = $db->getConnection();
+                foreach ($cartItems as $item) : 
+                    
+                $totalPrice += $item['price']; 
+
+
+
+                $imageQuery = "SELECT image_filename FROM product_images WHERE product_id = " . $item['id'] . " ORDER BY image_order LIMIT 1";
+                $imageResult = $conn->query($imageQuery);
+                $image = $imageResult->fetch_assoc()['image_filename'] ?? 'default.jpg'; // Use a default image if none found
+
+                echo '
+                <div class="shopping-product">
+                    <div class="shopping-image">
+                        <img src="' . $image . '" alt="' . htmlspecialchars($item['name']) . '">
+                    </div>
+                    <div class="title">
+                        <h2>' . htmlspecialchars($item['name']) . '</h2>
+                        <img src="../images/windows.png" alt="windows-logo">
+                    </div>
+                    <div class="priceNdMore">
+                        <p>' . htmlspecialchars($item['price']) . '$</p>
+                        <div class="addRemove">
+                            <div class="remove">
+                                <form action="../../Back-end/Cart/cart_functionality.php" method="post">
+                                    <input type="hidden" name="product_id" value="' . $item['id'] . '">
+                                    <button type="submit" class="add-to-cart-btn" name="remove_from_cart">Remove</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+';
+                endforeach; 
+?>
+
+                    <!-- <div class="shopping-product">
                         <div class="shopping-image">
                             <img src="../images/dark-souls-final.jpg" alt="dark souls image">
                         </div>
@@ -60,30 +128,39 @@
                                 </div>
                                 <div class="vertical-line"></div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="shoppingRemove">
-                        <div class="continue-shopping">
-                            <p>Continue shopping</p>
-                        </div>
-                        <p>Remove all items</p>
+                        </div> -->
                     </div>
                 </div>
                 <div class="total">
                     <div class="estimated-p">
                         <p>Estimated total</p>
-                        <p>74,28$</p>
+                        <p><?= number_format($totalPrice, 2) ?></p>
                     </div>
                     <p class="tax-p">Sales tax will be calculated during checkout where applicable</p>
                     <div class="continue-to-payment-btn">
-                        <p>Continue to payment</p>
+                        <!-- <p>Checkout</p> -->
+                        <form action="../../Back-end/Cart/checkout.php" method="post">
+                            <button type="submit">Checkout</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-
+    </main>
+    <div class="special-section">
+        <div class="shoppingRemove">
+            <div class="continue-shopping">
+                <p>continue shopping</p>
+            </div>
+            <form action="../../Back-end/Cart/cart_functionality.php" method="post">
+                    <input type="hidden" name="product_id" value="<?= $product['id']; ?>">
+                    <button type="submit" class="add-to-cart-btn" name="clear_cart">Remove all items</button>
+            </form>
+        </div>
+    </div>
+    <aside>
+    <div class="recommended">
         <h2 class="rec-h2">Recommendations For You</h2>
-        <div class="recommended">
             <div class="products">
                 <div class="flex-1">
                     <div class="flex-item product">
@@ -115,7 +192,7 @@
                 </div>
             </div>
         </div>
-    </main>
+    </aside>
     <footer>
         <div class="info">
             <div class="footer-image">
@@ -140,6 +217,11 @@
             </div>
         </div>
     </footer>
+    <script>
+        <?php if ($checkoutSuccess) : ?>
+            alert('Your order has been placed successfully!');
+        <?php endif; ?>
+    </script>
     <script src="cart.js"></script>
     <script src="../general-functions/functions.js"></script>
 </body>

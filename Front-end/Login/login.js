@@ -12,7 +12,7 @@ button[0].addEventListener('click',(event)=>{
 
     console.log("Clickin!");
 
-    // event.preventDefault();
+    event.preventDefault();
     const username = document.getElementById("username");
     const password = document.getElementById("password");
 
@@ -38,12 +38,15 @@ button[0].addEventListener('click',(event)=>{
         return false;
     }
 
+    const loginForm = document.getElementById("login-form");
+    loginForm.submit();
+
     console.log("Sent!")
     console.log("Username:", username.value);
     console.log("Password:", password.value);
 
     // Reset the form after submission
-    let loginForm = document.getElementById("login-form");
+
 
     // window.location.href = "../../Back-end/login/login.php";
 

@@ -65,11 +65,9 @@ contactSubmitBtn.addEventListener("click",(event)=>{
     console.log("Message:", message.value);
 
     const contactForm = document.getElementById("contact-us-form");
-
+    contactForm.submit();
     contactForm.reset();
 
-    alert("Your message has been sent.Thank you for reaching out! We'll try to reply as fast as we can. ^^");
-    window.location.href = "../Home/home.html";
 
 })
 

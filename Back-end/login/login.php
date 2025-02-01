@@ -15,6 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get form data
     $username = $_POST['username'];
     $password = $_POST['password'];
+
+    var_dump($_POST);
     // $remember = isset($_POST['remember']) ? true : false;
 
     // Attempt login
@@ -28,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         } else {
             // Redirect to regular user homepage/dashboard
-            header("Location: ../../Front-end/Home/home.php");
+            header("Location: ../index.php");
             exit();
         }
     } else {

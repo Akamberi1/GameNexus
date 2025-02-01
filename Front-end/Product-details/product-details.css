@@ -8,6 +8,41 @@ body {
     min-height: 100vh;
 }
 
+aside {
+    width: 12vw;
+    height: 7vh;
+    position: absolute;
+    right: 0;
+    top: 11vh;
+    z-index: 5;
+}
+
+.user-info {
+    width: 10vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    top: 10vh;
+    right: 2.5vw;
+    z-index: 5;
+}
+
+.user-info>form {
+    width: 100%;
+  text-align: center;
+  height: 35%;
+}
+
+.user-info>form>button {
+    width: 83%;
+    height: 100%;
+}
+
 
 header {
     width: 100vw;
@@ -105,7 +140,7 @@ nav a::selection {
 
 main {
     width: 100vw;
-    height: 321.5vh;
+    height: 282.5vh;
     background-color: #1b2a3d;
 }
 
@@ -227,7 +262,7 @@ main {
 
 .reviews {
     width: 100%;
-    height: 27%;
+    height: 200px;
     display: flex;
     justify-content: space-between;
 }
@@ -265,6 +300,13 @@ main {
     right: 5%;
 }
 
+.tgth{
+    height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .tgth>p {
     color: #c7d5e0;
 }
@@ -273,6 +315,10 @@ main {
     text-align: end;
     position: relative;
     right: 4%;
+    height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .extra>p {
@@ -384,6 +430,21 @@ main {
     cursor: pointer;
 }
 
+.text > form{
+    width: 100%;
+  height: 100%;
+}
+
+.text > form > button{
+    width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #8ed629 5%, #6aa621 95%);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 .text>p {
     position: relative;
     top: 15.9%;
@@ -393,13 +454,13 @@ main {
 
 .the-reviews {
     width: 50%;
-    height: 37vh;
-    position: relative;
-    left: 17.5vw;
-    top: 13vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  height: 4vh;
+  position: relative;
+  left: 17.5vw;
+  top: 13vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .h3-reviews {
@@ -407,6 +468,69 @@ main {
     height: 10%;
     margin-bottom: 1px solid;
 }
+
+.review-form {
+    width: 50%;
+    height: 37vh;
+    position: relative;
+    left: 17.5vw;
+    top: 23vh;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#leave-review-h3 {
+    color: white;
+    width: 100%;
+    height: 12%;
+}
+
+#ur-review-form {
+    width: 100%;
+    height: 87%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#ur-review-form>textarea {
+    width: 50%;
+    height: 52%;
+}
+
+#ur-review-form>input {
+    color: white;
+}
+
+#ur-review-form>button {
+    width: 30%;
+    height: 15%;
+}
+
+
+.final-review {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-btn {
+    width: 4%;
+    height: 100%;
+    border: 1px solid white;
+    position: relative;
+    bottom: 1vh;
+    cursor: pointer;
+}
+
+.add-btn>img {
+    width: 100%;
+    height: 100%;
+}
+
 
 .h3-reviews>h3 {
     text-transform: uppercase;
@@ -444,8 +568,11 @@ main {
 }
 
 .about-this-game {
-    top: 20vh;
-    height: 70vh;
+    width: 50%;
+    height: 37vh;
+    position: relative;
+    left: 17.5vw;
+    top: 18vh;
 }
 
 .p-about {
@@ -469,14 +596,24 @@ main {
 /* other games section css code */
 .featured-2 {
     height: 82vh;
-    position: relative;
-    top: 29vh;
-    background: radial-gradient(62.67% 62.67% at 62.67% 100%, rgba(255, 255, 255, 0.15) 0%, rgba(116, 133, 140, 0.15) 100%);
-    /* Question */
-    color: white;
-    padding: 40px 20px;
-    border-bottom: 3px solid #0e2332;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  background: radial-gradient(62.67% 62.67% at 62.67% 100%, rgba(255, 255, 255, 0.15) 0%, rgba(116, 133, 140, 0.15) 100%);
+    background-color: rgba(0, 0, 0, 0);
+  color: white;
+  padding: 40px 20px;
+  border-bottom: 3px solid #0e2332;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #1b2a3d;
+}
+
+.linqet {
+    width: 100%;
+    height: 85%;
+}
+
+.imazhet {
+    width: 100%;
+    height: 100%;
 }
 
 .featured-2 h1 {
@@ -506,7 +643,7 @@ main {
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     top: 1vh;
 }
 
@@ -763,26 +900,50 @@ footer {
     font-weight: bolder;
 }
 
-/* .featured {
-    width: 80%;
-    height: 80vh;
+.review {
+    width: 50%;
+  height: 26vh;
+  position: relative;
+  left: 17.5vw;
+  top: 13vh;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2vh;
+}
 
-
-    margin: auto;
-    padding: 40px 20px;
-
-    position: relative;
-    top: 5vh;
-    bottom: 1.7vh;
-    z-index: -1;
-
+.Text {
+    width: 75%;
+    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-    background: linear-gradient(135deg, #1e3a5f, #0e2332);
+.review-header {
+    width: 100%;
+    height: 10%;
     color: white;
-    text-align: center;
-    border-bottom: 3px solid #0e2332;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-} */
+}
+
+.review-text {
+    width: 100%;
+    height: 85%;
+    color: white;
+}
+
+.review-image {
+    width: 25%;
+    height: 100%;
+}
+
+.review-image>img {
+    width: 100%;
+    height: 100%;
+}
+
+.no-reviews-yet {
+    color: white;
+    position: absolute;
+    top: 172vh;
+  left: 17.5vw;
+}

@@ -103,7 +103,7 @@ $totalReviews = $dashboard->getCount('reviews');
             <a href="../users_dashboard/Users.php"><i class="fa-solid fa-users"></i>  Users</a>
           </li>
           <li class="sidebar-list-item">
-            <a href="#"><i class="fa-solid fa-gamepad"></i> Games</a>
+            <a href="../games/games.php"><i class="fa-solid fa-gamepad"></i> Games</a>
           </li>
         </ul>
       </aside>

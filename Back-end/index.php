@@ -2,8 +2,8 @@
 session_start();
 
 // Include database and user class
-include_once 'Database.php';
-include_once 'User.php';
+include_once 'Database/Database.php';
+include_once 'Central/User.php';
 
 // Initialize database connection
 $db = new Database();
@@ -18,12 +18,15 @@ if ($loggedInUser) {
   
     if ($loggedInUser['role'] === 'admin') {
        
-        header("Location: ../admin_dashboard/admin_dashboard.php");
+        header("Location: admin_dashboard/admin_dashboard.php");
         exit();
     } else {
     
-        header("Location: ../../Front-end/Home/home.php");
+        header("Location: ../Front-end/Home/home.php");
         exit();
     }
+}else{
+    header("Location: ../Front-end/Home/home.php");
+    exit();
 }
 ?>

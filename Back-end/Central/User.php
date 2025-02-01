@@ -17,7 +17,7 @@ class User {
 
         if (mysqli_num_rows($result) > 0) {
             $user = mysqli_fetch_assoc($result);
-
+            var_dump($user);
             // PREFERABLE SOLUTION
 
             // Check if the password matches

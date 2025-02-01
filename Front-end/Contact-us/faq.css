@@ -9,6 +9,33 @@ body {
     background-color: #1b2a3d;
 }
 
+.user-info {
+    width: 10vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    top: 10vh;
+    right: 2.5vw;
+    z-index: 5;
+}
+
+.user-info>form {
+    width: 100%;
+  text-align: center;
+  height: 35%;
+}
+
+.user-info>form>button {
+    width: 83%;
+    height: 100%;
+}
+
+
 header {
     width: 100vw;
     height: 10vh;
