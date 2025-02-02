@@ -38,7 +38,7 @@ loginSignup[0].addEventListener("click",()=>{
 
 loginSignup[1].addEventListener("click",()=>{
 
-    window.location.href = '../Register/registration-form.html';
+    window.location.href = '../Register/registration-form.php';
 
 })
 
