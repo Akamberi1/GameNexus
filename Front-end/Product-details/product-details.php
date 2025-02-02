@@ -55,6 +55,12 @@ if ($reviewResult->num_rows > 0) {
 
 
 ?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -318,7 +324,7 @@ if ($reviewResult->num_rows > 0) {
     <footer>
         <div class="info">
             <div class="footer-image">
-                <img src="../images/gamenexus-logo.png" alt="example-logo">
+                <img src="../images/valve-logo.jpg" alt="example-logo">
             </div>
             <div class="footer-p">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque</p>

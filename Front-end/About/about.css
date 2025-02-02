@@ -1,5 +1,5 @@
 body {  
-  font-family: 'Open Sans', sans-serif;
+  font-family:"Motiva Sans", Sans-serif;
   font-weight:500;
   background:#1D2024;
   color:#fff;
@@ -31,8 +31,8 @@ header {
 }
 
 .logo {
-  width: 147px;
-  height: 147px;
+  width: 10%;
+  height: 100%;
 }
 
 #logo1 {

@@ -9,6 +9,9 @@ body {
   .fa-solid{
     color: whitesmoke;
   }
+  .fa-bell, .fa-user{
+    font-size: 20px;
+  }
   .fa-users, .fa-gamepad, .fa-message{
     font-size: 20px;
   }
@@ -55,6 +58,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 30px;
   }
   
   .sidebar-title > span {

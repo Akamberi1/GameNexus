@@ -24,14 +24,14 @@ let loginSignup = document.getElementsByClassName("lS");
 
 loginSignup[0].addEventListener("click",()=>{
     console.log("click!");
-    window.location.href = '../Login/login.php';
+    window.location.href = '../Login/login.html';
 
 })
 
 
 loginSignup[1].addEventListener("click",()=>{
 
-    window.location.href = '../Register/registration-form.php';
+    window.location.href = '../Register/registration-form.html';
 
 })
 
@@ -56,7 +56,7 @@ let products = document.querySelectorAll(".product");
 products.forEach(product => {
     product.addEventListener("click",()=>{
         console.log("Working!")
-        window.location.href = '../Product-details/product-details.php';
+        window.location.href = '../Product-details/product-details.html';
 
     })
 });
