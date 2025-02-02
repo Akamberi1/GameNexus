@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($user->email !== $confirm_email) {
         $_SESSION["error"] = "Email addresses do not match!";
-        header("Location: ../Register/register.php");
+        header("Location: ../Register/registration-form.php");
         exit();
     }
 
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($user->exists()) {
         $_SESSION["error"] = "An account with this username or email already exists.";
-        header("Location: ../Register/register.php");
+        header("Location: ../Register/registration-form.php");
         exit();
     }
     
@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         $_SESSION["error"] = "Registration failed. Please try again.";
-        header("Location: ../Register/register.php");
+        header("Location: ../Register/registration-form.php");
         exit();
     }
 }
