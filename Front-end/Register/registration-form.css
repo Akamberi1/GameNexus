@@ -77,6 +77,7 @@ nav a::selection {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 20px; /* Add this line for space at the bottom */
 }
 .form-container h2{
     margin-bottom: 20px;
