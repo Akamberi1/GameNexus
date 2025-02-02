@@ -1,83 +1,77 @@
-var navLinks = document.getElementById("navLinks");
-function showMenu(){
-    navLinks.style.right = "0";
-}
-function hideMenu(){
-    navLinks.style.right = "-200px";
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.querySelector(".slider");
+    const slides = document.querySelectorAll(".carousel-linqet");
+    const prevButton = document.querySelector(".prev");
+    const nextButton = document.querySelector(".next");
 
+    let index = 0; // Track the current position
+    const visibleSlides = 3; // Number of visible slides
+    const totalSlides = slides.length;
+    const slideWidth = slides[0].offsetWidth; // Width of each slide + margin (adjust if needed)
 
-const slides = document.querySelectorAll('.campus-col');
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-    let currentSlide = 0;
-    const slidesToShow = 3; // Number of slides to show at once
-
-    function showSlides() {
-        const totalSlides = slides.length;
-        const maxSlideIndex = Math.ceil(totalSlides / slidesToShow) - 1; // Calculate the maximum slide index
-        currentSlide = Math.max(0, Math.min(currentSlide, maxSlideIndex)); // Ensure currentSlide is within bounds
-        const offset = -currentSlide * (100 / slidesToShow); // Calculate the offset for the transform
-        slides.forEach((slide) => {
-            slide.style.transform = `translateX(${offset}%)`;
-        });
+    // Function to update slider position
+    function updateSlider() {
+        slider.style.transform = `translateX(-${index * slideWidth}px)`;
     }
 
-    function nextSlide() {
-        const totalSlides = slides.length;
-        if (currentSlide < Math.ceil(totalSlides / slidesToShow) - 1) {
-            currentSlide++;
+    // Next button click
+    nextButton.addEventListener("click", function () {
+        console.log("clicked right!");
+        if (index < totalSlides - visibleSlides) {
+            index++;
+        } else {
+            index = 0; // Loop back to the first slide
         }
-        showSlides();
-    }
+        updateSlider();
+    });
 
-    function prevSlide() {
-        if (currentSlide > 0) {
-            currentSlide--;
+    // Previous button click
+    prevButton.addEventListener("click", function () {
+        console.log("clicked left!");
+        if (index > 0) {
+            index--;
+        } else {
+            index = totalSlides - visibleSlides; // Loop to the last visible set
         }
-        showSlides();
-    }
+        updateSlider();
+    });
 
-    nextButton.addEventListener('click', nextSlide);
-    prevButton.addEventListener('click', prevSlide);
+   
+});
 
-    // Initially show the first set of slides
-    showSlides();
-
-
-    const gameSlides = document.querySelectorAll('.game-col');
-    const gamePrevButton = document.querySelector('.game-slider .prevs');
-    const gameNextButton = document.querySelector('.game-slider .nexts');
-    let gameCurrentSlide = 0;
-    const gameSlidesToShow = 3; // Number of slides to show at once
-
-    function showGameSlides() {
-        const totalGameSlides = gameSlides.length;
-        const maxGameSlideIndex = Math.ceil(totalGameSlides / gameSlidesToShow) - 1; // Calculate the maximum slide index
-        gameCurrentSlide = Math.max(0, Math.min(gameCurrentSlide, maxGameSlideIndex)); // Ensure currentSlide is within bounds
-        const offset = -gameCurrentSlide * (100 / gameSlidesToShow); // Calculate the offset for the transform
-        gameSlides.forEach((slide) => {
-            slide.style.transform = `translateX(${offset}%)`;
-        });
-    }
-
-    function gameNextSlide() {
-        const totalGameSlides = gameSlides.length;
-        if (gameCurrentSlide < Math.ceil(totalGameSlides / gameSlidesToShow) - 1) {
-            gameCurrentSlide++;
+document.addEventListener("DOMContentLoaded", () => {
+    const carousels = document.querySelectorAll(".carousel-images");
+    const imageWidth = 33.33; // Percentage width of images
+    
+    carousels.forEach((carousel) => {
+      let images = carousel.querySelectorAll("img");
+      let index = 0;
+  
+      // Duplicate images for infinite effect
+      images.forEach((img) => {
+        let clone = img.cloneNode(true);
+        carousel.appendChild(clone);
+      });
+  
+      function showNextImage() {
+        index++;
+  
+        // Apply smooth transition
+        carousel.style.transition = "transform 0.8s ease-in-out";
+        carousel.style.transform = `translateX(-${index * imageWidth}%)`;
+  
+        // Reset loop when reaching the cloned set
+        if (index >= images.length) {
+          setTimeout(() => {
+            carousel.style.transition = "none"; // Instantly reset without animation
+            index = 0;
+            carousel.style.transform = `translateX(0)`;
+          }, 800); // Match the transition speed for perfect sync
         }
-        showGameSlides();
-    }
-
-    function gamePrevSlide() {
-        if (gameCurrentSlide > 0) {
-            gameCurrentSlide--;
-        }
-        showGameSlides();
-    }
-
-    gameNextButton.addEventListener('click', gameNextSlide);
-    gamePrevButton.addEventListener('click', gamePrevSlide);
-
-    // Initially show the first set of slides
-    showGameSlides();
+      }
+  
+      setInterval(showNextImage, 3000);
+    });
+  });
+  
+  

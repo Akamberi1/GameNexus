@@ -331,7 +331,7 @@
             <a href="../Home/home.html">home</a>
             <a href="../Categories/Categories.html">categories</a>
             <a href="../About/about.html">About us</a>
-            <a href="../Contact-us/faq.php">Contact us</a>
+            <a href="../Contact-us/faq.html">Contact us</a>
         </nav>
         <div class="right-elements">
             <img src="../images/shopping_cart_21dp_C7D5E0_FILL0_wght400_GRAD0_opsz20.png"

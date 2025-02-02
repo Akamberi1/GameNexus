@@ -104,7 +104,7 @@ $database->closeConnection();
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Admin Dashboard</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4acdbd152b.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -129,16 +129,42 @@ $database->closeConnection();
         <div class="header-left">
           <h2 style="color: white;">Welcome, Admin! </h2>
         </div>
-        <div class="header-right">
-          <i class="fa-solid fa-bell"></i>
-          <i class="fa-solid fa-user"></i>
-        </div>
+        <div class="header-right"></div>
       </header>
 
       <aside id="sidebar">
         <div class="sidebar-title">
           <div class="sidebar-brand"></div>
-          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+          <a href="../../Front-end/Home/home.php"><img class="logo" src="../../Front-end/images/gamenexus-logo.png" alt="Logo"></a>
+            <i class="fa-solid fa-circle-xmark close-sidebar-icon" onclick="closeSidebar()"></i>
+            <style>
+            .sidebar-title {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 10px 0;
+            }
+            .fa-circle-xmark {
+              display: none; 
+              margin: 50px; 
+              padding-bottom: 7.1px; 
+            }
+            .logo {
+              width: 150px; 
+              height: auto;
+              margin-right: 110px; 
+            }
+            .close-sidebar-icon {
+              margin-left: auto; 
+            }
+            @media screen and (max-width: 992px) {
+              .fa-circle-xmark {
+                display: inline !important; 
+                margin: 25px; 
+                padding-bottom: 7.1px; 
+              }
+            }
+          </style>
         </div>
 
         <ul class="sidebar-list">
@@ -152,16 +178,16 @@ $database->closeConnection();
             <a href="../../Front-end/Categories/Categories.php"><i class="fa-solid fa-list"></i> Categories</a>
           </li>
           <li class="sidebar-list-item">
-            <a href="../../Front-end/Contact-us/faq.html"><i class="fa-solid fa-address-book"></i> Contact Us</a>
+            <a href="../../Front-end/Contact-us/faq.php"><i class="fa-solid fa-address-book"></i> Contact Us</a>
           </li>
           <li class="sidebar-list-item">
             <a href="../../Front-end/About/about.html"><i class="fa-solid fa-address-card"></i>  About</a>
           </li>
           <li class="sidebar-list-item">
-            <a href="#"><i class="fa-solid fa-users"></i>  Users</a>
+            <a href="../users_dashboard/Users.php"><i class="fa-solid fa-users"></i>  Users</a>
           </li>
           <li class="sidebar-list-item">
-            <a href="#"><i class="fa-solid fa-gamepad"></i> Games</a>
+            <a href="../games/games.php"><i class="fa-solid fa-gamepad"></i> Games</a>
           </li>
         </ul>
       </aside>
@@ -195,8 +221,8 @@ $database->closeConnection();
         </table>
     <?php endif; ?>
     <button class="insert-btn" onclick="insertUser()">Insert</button>
-    <button class="logout" onclick="window.location.href='login.php'">Logout</button>
-
+    <button class="logout"><a style="text-decoration:none; color:white;" href="../login/logout.php">Logout</a></button>
+ 
     <script src="../admin_dashboard/admin_dashboard.js"></script>
     <script>
           function deleteUser(id) {
