@@ -181,7 +181,7 @@ $database->closeConnection();
             <a href="../../Front-end/Categories/Categories.php"><i class="fa-solid fa-list"></i> Categories</a>
           </li>
           <li class="sidebar-list-item">
-            <a href="../../Front-end/Contact-us/faq.php"><i class="fa-solid fa-address-book"></i> Contact Us</a>
+            <a href="../../Front-end/Contact-us/viewContacts.php"><i class="fa-solid fa-address-book"></i> Contact Data</a>
           </li>
           <li class="sidebar-list-item">
             <a href="../../Front-end/About/about.html"><i class="fa-solid fa-address-card"></i>  About</a>

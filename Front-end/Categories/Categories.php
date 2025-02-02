@@ -27,7 +27,6 @@ session_start();
         <div class="lS signup-click">
             <p>Signup</p>
         </div>
-        <div class="triangle"></div>
     </div>
     <div class="cart-notification-circle">
         <p class="cart-notification-p"></p>
