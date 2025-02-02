@@ -30,3 +30,9 @@ addBtn.addEventListener("click", function() {
         reviewForm.style.display = 'none';   // Hide the form
     }
 });
+
+// document.querySelectorAll('*').forEach(el => {
+//     if (el.scrollWidth > el.clientWidth) {
+//       el.style.outline = '2px solid red';
+//     }
+//   });

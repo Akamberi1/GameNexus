@@ -1,27 +1,37 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../Front-end/Fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype');
+    /* Adjust the path */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
+    font-family: 'Open Sans', Arial;
     background-color: #1b2a3d;
     color: #c7d5e0;
 }
 
 .user-info {
     width: 10vw;
-  height: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  color: white;
-  text-align: center;
-  align-items: center;
-  position: absolute;
-  top: 1vh;
-  right: 1.5vw;
-  z-index: 5;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    top: 1vh;
+    right: 1.5vw;
+    z-index: 5;
 }
 
 .user-info>form {
     width: 100%;
-  text-align: center;
-  height: 35%;
+    text-align: center;
+    height: 35%;
 }
 
 .user-info>form>button {
@@ -52,17 +62,17 @@ h1 {
 }
 
 .products {
-    width: 98vw;
-    height: 200vh;
+    width: 93vw;
+    height: 150.3vh;
     border: 3px solid #c7d5e0;
     position: relative;
-    left: 0.3vw;
     top: 4vh;
+    margin: auto;
 }
 
 .about {
     width: 90%;
-    height: 7vh;
+    height: 6%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -79,12 +89,11 @@ h1 {
 
 .product {
     width: 100%;
-    height: 10vh;
+    height: 6.94%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 1vh;
-    border: 2px solid black;
+    border: 2px solid white;
 }
 
 .the-product {
@@ -232,4 +241,230 @@ h3 {
     white-space: normal;
     text-align: center;
     display: block;
+}
+
+@media (min-width: 1024px) {
+    .buttons {
+        width: 14%;
+    }
+
+    .insert {
+        right: 3.5vw;
+        top: 2.3vh;
+    }
+
+    .about {
+        width: 86.8%;
+    }
+
+    .desc {
+        width: 10%;
+    }
+
+    #insertForm {
+        width: 30vw;
+    }
+
+    #editForm {
+        width: 30vw;
+    }
+
+    .products {
+        height: 147.3vh;
+    }
+
+    .product {
+        height: 7%;
+    }
+
+    .delBtn {
+        position: relative;
+        top: 0.1vh;
+    }
+
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+
+    .user-info {
+        width: 19vw;
+        height: 11vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: white;
+        text-align: center;
+        align-items: center;
+        position: absolute;
+        top: 1vh;
+        right: 3.5vw;
+        z-index: 5;
+    }
+
+    .about {
+        width: 82%;
+        height: 6%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 12px;
+    }
+
+    .product {
+        width: 100%;
+        height: 6.94%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border: 2px solid white;
+        font-size: 11px;
+    }
+
+    .buttons {
+        width: 20%;
+    }
+
+    .desc {
+        width: 9%;
+    }
+
+    .insert {
+        right: 6vw;
+        top: 2.5vh;
+    }
+
+    #insertForm {
+        width: 46vw;
+    }
+
+    #editForm {
+        width: 46vw;
+    }
+
+    .products {
+        width: 96vw;
+        height: 147.3vh;
+    }
+
+    .product {
+        height: 7%;
+    }
+}
+
+@media (max-width: 600px) {
+    .user-info {
+        width: 54vw;
+        height: 9vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: white;
+        text-align: center;
+        align-items: center;
+        position: absolute;
+        top: 1vh;
+        right: 0.5vw;
+        z-index: 5;
+    }
+
+
+    .products {
+        width: 95vw;
+        height: auto;
+
+        border: none;
+        top: 20vh;
+    }
+
+    .about-divs {
+        display: none;
+
+    }
+
+    .product {
+        width: 94%;
+        height: auto;
+
+        flex-direction: column;
+
+        padding: 10px;
+        border: 1px solid white;
+        margin-bottom: 10px;
+    }
+
+    .the-product {
+        width: 100%;
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .product-div {
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    .buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .editBtn {
+        width: 48%;
+        /* Make buttons take up equal space */
+        height: 40px;
+        font-size: 14px;
+    }
+
+    #insertForm {
+        width: 84vw;
+        height: 54vh;
+        position: relative;
+        top: 8vh;
+        left: 2vw;
+    }
+
+    #editForm {
+        width: 84vw;
+        height: 54vh;
+        position: relative;
+        top: 9vh;
+        left: 2vw;
+
+    }
+
+    .forma,
+    .forma2 {
+        width: 100%;
+    }
+
+
+
+    .insert {
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .formDelete {
+        width: 46%;
+        height: 4vh;
+    }
+
+    .insert {
+        width: 100%;
+        height: 6vh;
+        font-size: 16px;
+        text-align: center;
+        position: absolute;
+        top: -9vh;
+        left: 0vw;
+    }
+
+    h1 {
+        top: 8vh;
+    }
 }

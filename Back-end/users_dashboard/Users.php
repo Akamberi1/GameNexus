@@ -94,6 +94,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action'])) {
     exit;
 }
 
+if (!isset($_SESSION['user_id'])) {
+  header("Location: ../../Front-end/Login/login.html");
+  exit;
+}
+
 $users = $user->getAllUsers();
 $database->closeConnection();
 ?>

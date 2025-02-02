@@ -4,17 +4,24 @@ let profile = document.getElementsByClassName("profile-logo");
 
 
 profile[0].addEventListener('click',()=>{
-    let loginSignup = document.getElementsByClassName('loginSignupPop')
+    let loginSignup = document.getElementsByClassName('loginSignupPop');
     
     if(loginSignup[0].style.display == ''){
         loginSignup[0].style.display = 'block';
+        document.getElementsByClassName("overlay")[0].style.display = 'flex'
     }
-    else if(loginSignup[0].style.display == 'block'){
-        loginSignup[0].style.display = '';
-    }
+    // else if(loginSignup[0].style.display == 'block'){
+    //     loginSignup[0].style.display = '';
+    // }
 
 
     // loginSignup[0].style.display = 'block';
+})
+
+const overlay = document.querySelector(".overlay");
+overlay.addEventListener("click",()=>{
+    document.getElementsByClassName('loginSignupPop')[0].style.display = '';
+    document.getElementsByClassName("overlay")[0].style.display ='';
 })
 
 
@@ -62,3 +69,16 @@ products.forEach(product => {
 });
 
 
+let facebook = document.getElementById("facebook");
+let instagram = document.getElementById("instagram");
+let twitter = document.getElementById("twitter");
+
+facebook.addEventListener("click",()=>{
+    window.location.href = "https://www.facebook.com/arlind.kamberi.9/";
+})
+instagram.addEventListener("click",()=>{
+    window.location.href = "https://www.instagram.com/arlindkamberii/";
+})
+twitter.addEventListener("click",()=>{
+    window.location.href = "https://x.com/Kaiyoto_lol";
+})

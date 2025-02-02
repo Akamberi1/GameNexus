@@ -23,6 +23,7 @@
 
 <?php } ?>
 <body>
+    <div class="overlay"></div>
     <div class="loginSignupPop">
         <div class="lS login-click">
             <p>Log in</p>
@@ -31,7 +32,6 @@
         <div class="lS signup-click">
             <p>Signup</p>
         </div>
-        <div class="triangle"></div>
     </div>
     
     <div class="cart-notification-circle">
@@ -39,13 +39,13 @@
     </div>
     <header class="header">
         <div class="logo">
-            <img src="#" alt="logo-img" id="logo1">
+            <img src="../images/GameNexusLogo.png" alt="logo-img" id="logo1">
         </div>
         <nav class="right">
-            <a href="../Home/home.html">home</a>
-            <a href="../Categories/Categories.html">categories</a>
+            <a href="../Home/home.php">home</a>
+            <a href="../Categories/Categories.php">categories</a>
             <a href="../About/about.html">About us</a>
-            <a href="../Contact-us/faq.html">Contact us</a>
+            <a href="../Contact-us/faq.php">Contact us</a>
         </nav>
         <div class="right-elements">
             <img src="../images/shopping_cart_21dp_C7D5E0_FILL0_wght400_GRAD0_opsz20.png"
@@ -63,86 +63,50 @@
             <div class="questions">
                 <div class="answers">
                     <div class="header-title">
-                        <p class="answers-p"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                            feugiat
-                            quam ut lacus eleifend, a bibendum nibh malesuada.</p>
+                        <p class="answers-p"> What is game nexus?</p>
                         <div class="down-image">
                             <img src="../images/arrow_drop_down_45dp_E8EAED_FILL0_wght400_GRAD0_opsz48.svg"
                                 alt="down-button">
                         </div>
                     </div>
                     <div class="extra-description">
-                        <p class="description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque
-                            venenatis nunc viverra tempor. Sed id rhoncus quam. Curabitur eleifend nec mi nec iaculis.
-                            Donec
-                            eleifend sem magna, sed ultricies diam posuere id. Curabitur nec sapien vel nisl rutrum
-                            placerat. Vestibulum ullamcorper lorem id nibh dignissim, fermentum dignissim sem rhoncus.
-                            Ut
-                            ullamcorper rutrum efficitur. Suspendisse feugiat quam ut lacus eleifend, a bibendum nibh
-                            malesuada.</p>
+                        <p class="description"> GameNexus is an online game store platform that offers a seamless digital marketplace for gaming enthusiasts. It allows users to browse, purchase, and manage their game libraries, similar to platforms like Steam.</p>
                     </div>
                 </div>
                 <div class="answers">
                     <div class="header-title">
-                        <p class="answers-p"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                            feugiat
-                            quam ut lacus eleifend, a bibendum nibh malesuada.</p>
+                        <p class="answers-p"> If i contact u when will i expect to hear?</p>
                         <div class="down-image">
                             <img src="../images/arrow_drop_down_45dp_E8EAED_FILL0_wght400_GRAD0_opsz48.svg"
                                 alt="down-button">
                         </div>
                     </div>
                     <div class="extra-description">
-                        <p class="description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque
-                            venenatis nunc viverra tempor. Sed id rhoncus quam. Curabitur eleifend nec mi nec iaculis.
-                            Donec
-                            eleifend sem magna, sed ultricies diam posuere id. Curabitur nec sapien vel nisl rutrum
-                            placerat. Vestibulum ullamcorper lorem id nibh dignissim, fermentum dignissim sem rhoncus.
-                            Ut
-                            ullamcorper rutrum efficitur. Suspendisse feugiat quam ut lacus eleifend, a bibendum nibh
-                            malesuada.</p>
+                        <p class="description"> We usually reply within 2 days.</p>
                     </div>
                 </div>
                 <div class="answers">
                     <div class="header-title">
-                        <p class="answers-p"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                            feugiat
-                            quam ut lacus eleifend, a bibendum nibh malesuada.</p>
+                        <p class="answers-p"> Who developed GameNexus?</p>
                         <div class="down-image">
                             <img src="../images/arrow_drop_down_45dp_E8EAED_FILL0_wght400_GRAD0_opsz48.svg"
                                 alt="down-button">
                         </div>
                     </div>
                     <div class="extra-description">
-                        <p class="description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque
-                            venenatis nunc viverra tempor. Sed id rhoncus quam. Curabitur eleifend nec mi nec iaculis.
-                            Donec
-                            eleifend sem magna, sed ultricies diam posuere id. Curabitur nec sapien vel nisl rutrum
-                            placerat. Vestibulum ullamcorper lorem id nibh dignissim, fermentum dignissim sem rhoncus.
-                            Ut
-                            ullamcorper rutrum efficitur. Suspendisse feugiat quam ut lacus eleifend, a bibendum nibh
-                            malesuada.</p>
+                        <p class="description"> GameNexus was developed by Arlindi and Eriona.</p>
                     </div>
                 </div>
                 <div class="answers">
                     <div class="header-title">
-                        <p class="answers-p"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                            feugiat
-                            quam ut lacus eleifend, a bibendum nibh malesuada.</p>
+                        <p class="answers-p">Are u hiring right now?</p>
                         <div class="down-image">
                             <img src="../images/arrow_drop_down_45dp_E8EAED_FILL0_wght400_GRAD0_opsz48.svg"
                                 alt="down-button">
                         </div>
                     </div>
                     <div class="extra-description">
-                        <p class="description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque
-                            venenatis nunc viverra tempor. Sed id rhoncus quam. Curabitur eleifend nec mi nec iaculis.
-                            Donec
-                            eleifend sem magna, sed ultricies diam posuere id. Curabitur nec sapien vel nisl rutrum
-                            placerat. Vestibulum ullamcorper lorem id nibh dignissim, fermentum dignissim sem rhoncus.
-                            Ut
-                            ullamcorper rutrum efficitur. Suspendisse feugiat quam ut lacus eleifend, a bibendum nibh
-                            malesuada.</p>
+                        <p class="description"> As of now we do not need new members in our crew, however be sure to check in on us on the future for possible positions!</p>
                     </div>
                 </div>
             </div>
@@ -173,25 +137,24 @@
     </div>
     <footer>
         <div class="info">
-            <div class="footer-image">
+            <!-- <div class="footer-image">
                 <img src="../images/valve-logo.jpg" alt="example-logo">
-            </div>
+            </div> -->
             <div class="footer-p">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque</p>
+                <p>© 2025 GameStore Inc. All rights reserved.</p>
                 <div class="p-link">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque</p>
                     <div class="links">
-                        <a href="../Home/home.html">Home</a>
-                        <a href="../Categories/Categories.html">Categories</a>
+                        <a href="../Home/home.php">Home</a>
+                        <a href="../Categories/Categories.php">Categories</a>
                         <a href="../About/about.html">About us</a>
-                        <a href="../Contact-us/faq.html">Contact us</a>
+                        <a href="../Contact-us/faq.php">Contact us</a>
                     </div>
                 </div>
             </div>
             <div class="socials">
-                <img src="../images/facebook-logo-removebg-preview.png" alt="facebook-logo">
-                <img src="../images/insta2-removebg-preview.png" alt="twitter-logo">
-                <img src="../images/twitter.png" alt="instagram-logo" id="twitter">
+                <img id="facebook" src="../images/facebook-logo-removebg-preview.png" alt="facebook-logo">
+                <img id="instagram" src="../images/insta2-removebg-preview.png" alt="twitter-logo">
+                <img id="twitter" src="../images/twitter.png" alt="instagram-logo" id="twitter">
             </div>
         </div>
     </footer>

@@ -4,9 +4,31 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../Fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype'); /* Adjust the path */
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
+    font-family: 'Open Sans', Arial;
     min-height: 100vh;
     background-color: #1b2838;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
 }
 
 .user-info {
@@ -25,8 +47,8 @@ body {
 
 .user-info>form {
     width: 100%;
-  text-align: center;
-  height: 35%;
+    text-align: center;
+    height: 35%;
 }
 
 .user-info>form>button {
@@ -129,25 +151,17 @@ nav a::selection {
     margin-left: 20px;
 }
 
-
 .loginSignupPop {
-    width: 170px;
-    height: 65px;
+    width: 27vw;
+    height: 16vh;
     background-color: #171a21;
-    position: absolute;
-    top: 12vh;
-    right: 0.8vw;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
     border: 1px solid #c7d5e0;
-
+    z-index: 11;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: none;
-
-    z-index: 2;
 }
 
 .triangle {
@@ -191,31 +205,31 @@ main {
     background-color: #1b2838;
 }
 
-aside{
+aside {
     width: 100%;
-  height: 71vh;
-  background-color: #1b2838;
-  position: relative;
-  top: 7vh;
+    height: 71vh;
+    background-color: #1b2838;
+    position: relative;
+    top: 7vh;
 }
 
-.special-section{
+.special-section {
     width: 100%;
-  height: 5vh;
-  background-color: #1b2838;
-  
+    height: 5vh;
+    background-color: #1b2838;
+
 }
 
 
 .buy-it {
     width: 64vw;
     height: 83%;
-  margin: auto;
-  position: relative;
-  top: 8vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+    margin: auto;
+    position: relative;
+    top: 8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .shp-h {
@@ -331,15 +345,15 @@ aside{
     text-decoration: underline;
 }
 
-.remove>form>button{
+.remove>form>button {
     background-color: transparent;
-  border-bottom: 1px solid white;
-  padding-bottom: 5px;
-  border-left: none;
-  border-top: none;
-  border-right: none;
-  color: white;
-  cursor: pointer;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    color: white;
+    cursor: pointer;
 }
 
 .vertical-line {
@@ -354,17 +368,17 @@ aside{
 
 .shoppingRemove {
     width: 20%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  left: 18vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    left: 18vw;
 }
 
 .continue-shopping {
     height: 100%;
-  width: 50%;
+    width: 50%;
     background-color: #3d4450;
     border-radius: 2.2px;
 
@@ -376,15 +390,15 @@ aside{
 
 }
 
-.shoppingRemove > form > button{
+.shoppingRemove>form>button {
     background-color: transparent;
-  border-bottom: 1px solid white;
-  padding-bottom: 3px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  color: white;
-  cursor: pointer;
+    border-bottom: 1px solid white;
+    padding-bottom: 3px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: white;
+    cursor: pointer;
 }
 
 .continue-shopping>p {
@@ -401,15 +415,15 @@ aside{
 
 .total {
     width: 29%;
-  height: 23vh;
-  background-color: #15202e;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  position: absolute;
-  right: 0;
-  top: 5vh;
+    height: 23vh;
+    background-color: #15202e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 5vh;
 }
 
 .estimated-p {
@@ -451,19 +465,19 @@ aside{
     cursor: pointer;
 }
 
-.continue-to-payment-btn > form {
+.continue-to-payment-btn>form {
     width: 100%;
     height: 100%;
 }
 
-.continue-to-payment-btn > form > button{
+.continue-to-payment-btn>form>button {
     width: 100%;
-  height: 100%;
-  background-color: transparent;
-  border: none;
-  color: white;
-  font-size: 15px;
-  cursor: pointer;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
 }
 
 .continue-to-payment-btn>p {
@@ -474,18 +488,18 @@ aside{
 .recommended {
     width: 42.6vw;
     height: 100%;
-  position: relative;
-  left: 17.6vw;
+    position: relative;
+    left: 17.6vw;
 }
 
 .products {
     width: 100%;
-  height: 90%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+    height: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .flex-1 {
@@ -594,12 +608,12 @@ aside{
 
 .rec-h2 {
     font-size: 20px;
-  color: #c7d5e0;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  position: relative;
-  width: 30vw;
-  height: 5%;
+    color: #c7d5e0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    width: 30vw;
+    height: 5%;
 }
 
 footer {
@@ -610,7 +624,7 @@ footer {
     align-items: center;
     background-color: #111a24;
     position: relative;
-  top: 7vh;
+    top: 7vh;
 }
 
 .info {
@@ -687,4 +701,443 @@ footer {
 #twitter {
     width: 24%;
     height: 28.5%;
+}
+
+
+@media (min-width: 1024px) {
+
+    .logo {
+        width: 18%;
+        height: 11vh;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 40%;
+        height: 100%;
+        text-align: center;
+    }
+
+    .user-info {
+        width: 17vw;
+    }
+
+    .buy-it {
+        width: 86vw;
+    }
+
+    .shoppingRemove {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        left: 10vw;
+    }
+
+    aside {
+        width: 86vw;
+    }
+
+    .recommended {
+        width: 74%;
+        height: 100%;
+        position: relative;
+        left: 10vw;
+    }
+
+    .rec-h2 {
+        width: 60%;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .footer-p {
+        width: 70%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        position: relative;
+        left: 4vw;
+    }
+
+    .footer-p>p {
+        color: white;
+        position: relative;
+        left: 1.5vw;
+    }
+
+    .p-link {
+        width: 62%;
+        position: relative;
+        right: 1.8vw;
+    }
+
+    .links {
+        width: 100%;
+    }
+
+    .socials {
+        width: 10%;
+        height: 28%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        right: 5vw;
+    }
+
+    .socials>img {
+        width: 40%;
+        height: 100%;
+    }
+
+    #twitter {
+        width: 29%;
+        height: 81%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    header{
+        overflow: hidden;
+    }
+    .logo {
+        height: 11vh;
+        width: 18vw;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 65%;
+        height: 100%;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .right-elements {
+        width: 16%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        left: 3vw;
+        top: 1vh;
+    }
+
+    .shopping-logo {
+        width: 35%;
+        height: 64%;
+        right: 0%;
+
+    }
+
+    .profile-logo {
+        width: 35%;
+        height: 64%;
+        position: relative;
+        left: 1vw;
+    }
+
+    .user-info {
+        width: 26vw;
+        top: 12vh;
+    }
+
+    .buy-it {
+        width: 96vw;
+        height: 81%;
+        margin: auto;
+        position: relative;
+        top: 14vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .shopping {
+        width: 67%;
+    }
+
+    .addRemove {
+        left: -1.5vw;
+    }
+
+    .shoppingRemove {
+        width: 47%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        left: 2vw;
+    }
+
+    aside {
+        width: 100%;
+        height: 71vh;
+        background-color: #1b2838;
+        position: relative;
+        top: 7vh;
+    }
+
+    .recommended {
+        width: 85%;
+        height: 100%;
+        position: relative;
+        left: 2vw;
+    }
+
+    .rec-h2 {
+        width: 100%;
+    }
+
+    footer {
+        height: 14vh;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .footer-p {
+        width: 50%;
+        height: 100%;
+    }
+
+    .footer-p>p {
+        position: relative;
+        left: 3vw;
+    }
+
+    .links {
+        position: relative;
+        left: 2vw;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        font-size: 12px;
+        align-items: center;
+        top: 0.1vh;
+    }
+
+    .socials {
+        width: 24%;
+        height: 34%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        right: 2vw;
+    }
+
+    .socials>img {
+        height: 100%;
+    }
+
+    #twitter {
+        height: 80%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .loginSignupPop{
+        width: 52vw;
+    }
+
+    .logo {
+        position: absolute;
+        width: 34vw;
+        height: 10vh;
+        top: 7vh;
+        left: 33vw;
+    }
+
+
+    header{
+        overflow: hidden;
+    }
+    .user-info {
+        width: 34vw;
+        height: 6vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: white;
+        text-align: center;
+        align-items: center;
+        position: absolute;
+        top: 10.4vh;
+        left: 1.5vw;
+    }
+
+    .user-info>form {
+        width: 100%;
+        text-align: center;
+        height: 40%;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 90%;
+        height: 100%;
+        font-size: 10px;
+        position: relative;
+        left: 5vw;
+        text-align: center;
+    }
+
+    .right-elements {
+        width: 87px;
+        height: 37px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 11vh;
+        right: 0;
+    }
+
+    .shopping-logo {
+        position: relative;
+        cursor: pointer;
+        width: 30%;
+        height: 80%;
+        border: 1px solid white;
+        z-index: 1;
+    }
+
+    .profile-logo {
+        position: relative;
+        left: 1vw;
+        cursor: pointer;
+        width: 30%;
+        height: 80%;
+        border: 1px solid white;
+        z-index: 1;
+    }
+
+    .buy-it {
+        width: 97vw;
+    position: relative;
+    top: 10vh;
+    }
+
+    .shopping {
+        width: 97%;
+        height: 84%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        left: 1vw;
+    }
+
+    .shopping-section {
+        width: 100%;
+    }
+
+    .addRemove {
+        left: -1.5vw;
+    }
+
+    .total {
+        width: 85%;
+        height: 23vh;
+        background-color: #15202e;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        right: 7vw;
+        top: 134vh;
+    }
+
+    .shoppingRemove {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        left: 10vw;
+    }
+
+    aside {
+        top: 28vh;
+
+        height: 53vh;
+    }
+
+    .recommended {
+        width: 96%;
+        height: 100%;
+        position: relative;
+        left: 2vw;
+    }
+
+    .rec-h2 {
+        font-size: 18px;
+        color: #c7d5e0;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        position: relative;
+        width: 100%;
+        height: 5%;
+    }
+
+    footer {
+        top: 27vh;
+        height: 12vh;
+        overflow: hidden;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .footer-p {
+        width: 70%;
+        height: 91%
+    }
+
+    .footer-p>p {
+        position: relative;
+        left: 4vw;
+    }
+
+    .links {
+        position: relative;
+        left: 2vw;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        font-size: 10px;
+        align-items: center;
+        top: 0.1vh;
+    }
+
+    .socials {
+        width: 24%;
+        height: 71%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        right: 2vw;
+    }
 }

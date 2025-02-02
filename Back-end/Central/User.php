@@ -21,34 +21,34 @@ class User {
             // PREFERABLE SOLUTION
 
             // Check if the password matches
-            // if (password_verify($password, $user['password'])) {
-                // Store user information in session
-                // $_SESSION['user_id'] = $user['id'];
-                // $_SESSION['username'] = $user['username'];
-                // $_SESSION['role'] = $user['role']; // Store the role (admin or user)
+            if (password_verify($password, $user['password'])) {
+                //Store user information in session
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['role'] = $user['role']; // Store the role (admin or user)
 
-                // Optional: Remember me functionality
-                // if ($remember) {
-                //     $this->setRememberMe($user['id']);
-                // }
+                //Optional: Remember me functionality
+                
+                    $this->setRememberMe($user['id']);
+            
 
-                // return $user; // Return user data (including role) if login is successful
-            // }
+                return $user; // Return user data (including role) if login is successful
+            }
 
 
             // TEMPORARY SOLUTION
 
-            if ($password === $user['password']) { // Direct comparison for testing
-                // Store user information in session
-                $_SESSION['user_id'] = $user['id'];
-                $_SESSION['username'] = $user['username'];
-                $_SESSION['role'] = $user['role']; // Store the role (admin or user)
+            // if ($password === $user['password']) { // Direct comparison for testing
+            //     // Store user information in session
+            //     $_SESSION['user_id'] = $user['id'];
+            //     $_SESSION['username'] = $user['username'];
+            //     $_SESSION['role'] = $user['role']; // Store the role (admin or user)
     
-              // Automatically trigger the Remember Me functionality for all users
-                $this->setRememberMe($user['id']);
+            //   // Automatically trigger the Remember Me functionality for all users
+            //     $this->setRememberMe($user['id']);
     
-                return $user; // Return user data if login is successful
-            }
+            //     return $user; // Return user data if login is successful
+            // }
         }
 
         return false; // Login failed

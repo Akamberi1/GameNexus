@@ -4,8 +4,30 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../Fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype'); /* Adjust the path */
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
+    font-family: 'Open Sans',Arial;
     min-height: 100vh;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
 }
 
 aside {
@@ -34,8 +56,8 @@ aside {
 
 .user-info>form {
     width: 100%;
-  text-align: center;
-  height: 35%;
+    text-align: center;
+    height: 35%;
 }
 
 .user-info>form>button {
@@ -150,7 +172,7 @@ main {
     background: linear-gradient(135deg, #1e3a5f, #0e2332);
 }
 
-.overlay {
+.overlay1 {
     width: 100vw;
     height: 93vh;
     background: url('../images/dark-souls.png') no-repeat center center;
@@ -246,6 +268,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: auto;
 }
 
 .image-description>img {
@@ -300,11 +323,11 @@ main {
     right: 5%;
 }
 
-.tgth{
+.tgth {
     height: 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .tgth>p {
@@ -316,9 +339,9 @@ main {
     position: relative;
     right: 4%;
     height: 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .extra>p {
@@ -430,19 +453,19 @@ main {
     cursor: pointer;
 }
 
-.text > form{
+.text>form {
     width: 100%;
-  height: 100%;
+    height: 100%;
 }
 
-.text > form > button{
+.text>form>button {
     width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, #8ed629 5%, #6aa621 95%);
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
+    height: 100%;
+    background: linear-gradient(to right, #8ed629 5%, #6aa621 95%);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .text>p {
@@ -454,13 +477,13 @@ main {
 
 .the-reviews {
     width: 50%;
-  height: 4vh;
-  position: relative;
-  left: 17.5vw;
-  top: 13vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    height: 4vh;
+    position: relative;
+    left: 17.5vw;
+    top: 13vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .h3-reviews {
@@ -596,14 +619,15 @@ main {
 /* other games section css code */
 .featured-2 {
     height: 82vh;
-  position: relative;
-  background: radial-gradient(62.67% 62.67% at 62.67% 100%, rgba(255, 255, 255, 0.15) 0%, rgba(116, 133, 140, 0.15) 100%);
+    position: relative;
+    background: radial-gradient(62.67% 62.67% at 62.67% 100%, rgba(255, 255, 255, 0.15) 0%, rgba(116, 133, 140, 0.15) 100%);
     background-color: rgba(0, 0, 0, 0);
-  color: white;
-  padding: 40px 20px;
-  border-bottom: 3px solid #0e2332;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #1b2a3d;
+    color: white;
+    padding: 40px 20px;
+    border-bottom: 3px solid #0e2332;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #1b2a3d;
+    overflow: hidden;
 }
 
 .linqet {
@@ -824,23 +848,16 @@ footer {
 }
 
 .loginSignupPop {
-    width: 170px;
-    height: 65px;
+    width: 27vw;
+    height: 16vh;
     background-color: #171a21;
-    position: absolute;
-    top: 12vh;
-    right: 0.8vw;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
     border: 1px solid #c7d5e0;
-
+    z-index: 11;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: none;
-
-    z-index: 2;
 }
 
 .triangle {
@@ -902,13 +919,13 @@ footer {
 
 .review {
     width: 50%;
-  height: 26vh;
-  position: relative;
-  left: 17.5vw;
-  top: 13vh;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2vh;
+    height: 26vh;
+    position: relative;
+    left: 17.5vw;
+    top: 13vh;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2vh;
 }
 
 .Text {
@@ -945,5 +962,485 @@ footer {
     color: white;
     position: absolute;
     top: 172vh;
-  left: 17.5vw;
+    left: 17.5vw;
+}
+
+@media (min-width: 1024px) {
+
+    .logo {
+        width: 18%;
+        height: 11vh;
+    }
+
+
+    .user-info {
+        width: 18vw;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 40%;
+        height: 100%;
+        text-align: center;
+    }
+
+    .title-game {
+        width: 75%;
+    }
+
+    .game {
+        width: 75%;
+    }
+
+    .add-to-cart {
+        width: 33%;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .footer-p {
+        width: 70%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        position: relative;
+        left: 4vw;
+    }
+
+    .footer-p>p {
+        color: white;
+        position: relative;
+        left: 1.5vw;
+    }
+
+    .p-link {
+        width: 62%;
+    }
+
+    .links {
+        width: 100%;
+    }
+
+    .socials {
+        width: 10%;
+        height: 28%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        right: 5vw;
+    }
+
+    .socials>img {
+        width: 40%;
+        height: 100%;
+    }
+
+    #twitter {
+        width: 29%;
+        height: 81%;
+    }
+
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    .logo {
+        height: 11vh;
+        width: 18vw;
+    }
+
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 65%;
+        height: 100%;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .right-elements {
+        width: 16%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        left: 3vw;
+        top: 1vh;
+    }
+
+    .shopping-logo {
+        width: 35%;
+        height: 64%;
+        right: 0%;
+
+    }
+
+    .profile-logo {
+        width: 35%;
+        height: 64%;
+        position: relative;
+        left: 1vw;
+    }
+
+    .user-info {
+        width: 26vw;
+        top: 12vh;
+    }
+
+    .title-game {
+        width: 93%;
+        height: 10%;
+        margin: auto;
+        position: relative;
+        top: 17vh;
+    }
+
+    .game {
+        width: 93%;
+        height: 54%;
+    }
+
+    .review-left-side {
+        width: 68%;
+    }
+
+    .extra {
+        font-size: 11px;
+    }
+
+    .buy {
+        width: 75%;
+        height: 11vh;
+        position: relative;
+        left: 14.5vw
+    }
+
+    .add-to-cart {
+        width: 44%;
+    }
+
+    .add-btn {
+        width: 11%;
+    }
+
+    .Text {
+        width: 65%;
+    }
+
+    .review-image {
+        width: 37%;
+    }
+
+    .another-line {
+        position: absolute;
+        top: 9vh;
+        width: 93%;
+        left: 3.4vw;
+    }
+
+    .head-2 {
+        width: 100%;
+    }
+
+    .products {
+        width: 100%;
+        height: 85%;
+    }
+
+    footer {
+        height: 14vh;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .footer-p {
+        width: 50%;
+        height: 100%;
+    }
+
+    .footer-p>p {
+        position: relative;
+        left: 3vw;
+    }
+
+    .links {
+        position: relative;
+        left: 2vw;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        font-size: 12px;
+        align-items: center;
+        top: 0.1vh;
+    }
+
+    .socials {
+        width: 24%;
+        height: 34%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        right: 2vw;
+    }
+
+    .socials>img {
+        height: 100%;
+    }
+
+    #twitter {
+        height: 80%;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .loginSignupPop{
+        width: 52vw;
+    }
+
+    .logo {
+        position: absolute;
+        width: 34vw;
+        height: 10vh;
+        top: 7vh;
+        left: 33vw;
+    }
+
+    .user-info {
+        width: 34vw;
+        height: 6vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: white;
+        text-align: center;
+        align-items: center;
+        position: absolute;
+        top: 10.4vh;
+        left: 1.5vw;
+    }
+
+    .user-info>form {
+        width: 100%;
+        text-align: center;
+        height: 40%;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 90%;
+        height: 100%;
+        font-size: 10px;
+        position: relative;
+        left: 5vw;
+        text-align: center;
+    }
+
+    .right-elements {
+        width: 87px;
+        height: 37px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 11vh;
+        right: 0;
+    }
+
+    .shopping-logo {
+        position: relative;
+        cursor: pointer;
+        width: 30%;
+        height: 80%;
+        border: 1px solid white;
+        z-index: 1;
+    }
+
+    .profile-logo {
+        position: relative;
+        left: 1vw;
+        cursor: pointer;
+        width: 30%;
+        height: 80%;
+        border: 1px solid white;
+        z-index: 1;
+    }
+
+    .content {
+        height: 50vh;
+    }
+
+    .title-game {
+        width: 93%;
+        height: 10%;
+        margin: auto;
+        position: relative;
+        top: 14vh;
+    }
+
+    .game {
+        width: 93%;
+        height: 53%;
+        background-color: #0000007d;
+        z-index: 2;
+        position: relative;
+        top: 28vh;
+        left: 50%;
+    }
+
+    .review-left-side {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        font-size: 13px;
+    }
+
+    .review-right-side {
+        width: 50%;
+    }
+
+    .review-right-side>p {
+        font-size: 12px;
+    }
+
+    .extra {
+        font-size: 10px;
+    }
+
+    .buy {
+        width: 92%;
+        height: 9vh;
+        position: relative;
+        left: 4vw;
+        top: 5vh;
+    }
+
+    .add-to-cart {
+        width: 52%;
+    }
+
+    .about-this-game {
+        width: 85%;
+        height: 33vh;
+        position: relative;
+        left: 7.7vw;
+        top: 18vh;
+    }
+
+    .the-reviews {
+        width: 85%;
+        height: 4vh;
+        position: relative;
+        left: 7.7vw
+    }
+
+    .line-under-h3 {
+        position: absolute;
+        top: 26px;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, #3a6e8b, #1e2e3f);
+    }
+
+    .review {
+        width: 85%;
+        height: 26vh;
+        position: relative;
+        left: 7.7vw;
+    }
+
+    .Text {
+        width: 60%;
+    }
+
+    .review-image {
+        width: 40%;
+        height: 100%;
+    }
+
+    .add-btn {
+        width: 9%;
+        height: 73%;
+    }
+
+    .no-reviews-yet {
+        top: 121vh;
+        left: 7.5vw;
+    }
+
+    .another-line {
+        position: absolute;
+        top: 67px;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, #3a6e8b, #1e2e3f);
+        left: 6vw;
+    }
+
+    .head-2 {
+        width: 100%;
+    }
+
+    .products {
+        width: 100%;
+        height: 64%;
+    }
+
+    footer {
+        height: 12vh;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .footer-p {
+        width: 70%;
+        height: 91%
+    }
+
+    .footer-p>p {
+        position: relative;
+        left: 4vw;
+    }
+
+    .links {
+        position: relative;
+        left: 2vw;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        font-size: 10px;
+        align-items: center;
+        top: 0.1vh;
+    }
+
+    .socials {
+        width: 24%;
+        height: 71%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        right: 2vw;
+    }
 }

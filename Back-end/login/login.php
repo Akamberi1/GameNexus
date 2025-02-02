@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 // Include database and user class
 include_once '../Database/Database.php';
 include_once '../Central/User.php';

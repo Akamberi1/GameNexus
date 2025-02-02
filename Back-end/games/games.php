@@ -1,5 +1,10 @@
 <?php include_once '../../Back-end/Database/Database.php'; 
 session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../../Front-end/Login/login.html");
+    exit;
+}
 if (isset($_SESSION['message'])) {
     echo '<script>alert("' . $_SESSION['message'] . '");</script>';
     unset($_SESSION['message']); 
@@ -25,6 +30,7 @@ $conn = $db->getConnection(); ?>
     </div>
 
 <?php } ?>
+
 <body>
     <a href="../admin_dashboard/admin_dashboard.php" class="img-link"><img src="../../Front-end/images/return-icon.png" alt="return-icon"></a>
     <h1>Games</h1>

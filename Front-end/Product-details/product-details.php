@@ -82,6 +82,7 @@ if ($reviewResult->num_rows > 0) {
 <?php } ?>
 
 <body>
+    <div class="overlay"></div>
     <div class="loginSignupPop">
         <div class="lS login-click">
             <p>Log in</p>
@@ -90,7 +91,6 @@ if ($reviewResult->num_rows > 0) {
         <div class="lS signup-click">
             <p>Signup</p>
         </div>
-        <div class="triangle"></div>
     </div>
     
     <div class="cart-notification-circle">
@@ -98,13 +98,13 @@ if ($reviewResult->num_rows > 0) {
     </div>
     <header class="header">
         <div class="logo">
-            <img src="#" alt="logo-img" id="logo1">
+            <img src="../images/GameNexusLogo.png" alt="logo-img" id="logo1">
         </div>
         <nav class="right">
-            <a href="../Home/home.html">home</a>
-            <a href="../Categories/Categories.html">categories</a>
+            <a href="../Home/home.php">home</a>
+            <a href="../Categories/Categories.php">categories</a>
             <a href="../About/about.html">About us</a>
-            <a href="../Contact-us/faq.html">Contact us</a>
+            <a href="../Contact-us/faq.php">Contact us</a>
         </nav>
         <div class="right-elements">
             <img src="../images/shopping_cart_21dp_C7D5E0_FILL0_wght400_GRAD0_opsz20.png"
@@ -188,7 +188,7 @@ if ($reviewResult->num_rows > 0) {
             </div>
 
         </div>
-        <div class="overlay"></div>
+        <div class="overlay1"></div>
         <div class="buy">
             <div class="buy-text-div">
                 <p class="buy-text">
@@ -323,25 +323,21 @@ if ($reviewResult->num_rows > 0) {
         </div>
     <footer>
         <div class="info">
-            <div class="footer-image">
-                <img src="../images/valve-logo.jpg" alt="example-logo">
-            </div>
             <div class="footer-p">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque</p>
+                <p>© 2025 GameStore Inc. All rights reserved.</p>
                 <div class="p-link">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque</p>
                     <div class="links">
-                        <a href="../Home/home.html">Home</a>
-                        <a href="../Categories/Categories.html">Categories</a>
+                        <a href="../Home/home.php">Home</a>
+                        <a href="../Categories/Categories.php">Categories</a>
                         <a href="../About/about.html">About us</a>
-                        <a href="../Contact-us/faq.html">Contact us</a>
+                        <a href="../Contact-us/faq.php">Contact us</a>
                     </div>
                 </div>
             </div>
             <div class="socials">
-                <img src="../images/facebook-logo-removebg-preview.png" alt="facebook-logo">
-                <img src="../images/insta2-removebg-preview.png" alt="twitter-logo">
-                <img src="../images/twitter.png" alt="instagram-logo" id="twitter">
+                <img id="facebook"  src="../images/facebook-logo-removebg-preview.png" alt="facebook-logo">
+                <img id="instagram" src="../images/insta2-removebg-preview.png" alt="twitter-logo">
+                <img id="twitter" src="../images/twitter.png" alt="instagram-logo" id="twitter">
             </div>
         </div>
     </footer>

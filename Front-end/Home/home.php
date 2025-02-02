@@ -1,295 +1,6 @@
 <?php session_start()?>
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../Home/home.css">
-</head>
-<body>
-    <div class="loginSignupPop">
-        <div class="lS login-click">
-            <p>Log in</p>
-        </div>
-        <hr id="pop-line">
-        <div class="lS signup-click">
-            <p>Signup</p>
-        </div>
-        <div class="triangle"></div>
-    </div>
-    <div class="cart-notification-circle">
-        <p class="cart-notification-p"></p>
-    </div>
-    <header class="header">
-        <div class="logo">
-            <img src="#" alt="logo-img" id="logo1">
-        </div>
-        <nav class="right">
-            <a href="../Home/home.html">home</a>
-            <a href="../Categories/Categories.html">categories</a>
-            <a href="../About/about.html">About us</a>
-            <a href="../Contact-us/faq.html">Contact us</a>
-        </nav>
-        <div class="right-elements">
-            <img src="../images/shopping_cart_21dp_C7D5E0_FILL0_wght400_GRAD0_opsz20.png"
-            alt="shopping-cart-icon" class="shopping-logo">
-            <img src="../images/person_24dp_C7D5E0_FILL0_wght400_GRAD0_opsz24.png" alt="profile-icon"
-                class="profile-logo">
-        </div>
-    </header>
-    <main>
 
-        <div class="featured">
-            <h1>Featured</h1>
-        </div>
-
-        <div class="slider-container">
-            <div class="slider">
-                <img src="../images/hero_capsule.jpg" alt="Hades 2" class="slide product">
-                <img src="../images/dragonDogma.jpg" alt="Dragon Dogma" class="slide product">
-                <img src="../images/dark-souls3.jpg" alt="Dark souls 3" class="slide product">
-            </div>
-            <div class="button-sliders">
-                <button class="buttons prev">&#10094;</button>
-                <button class="buttons next">&#10095;</button>
-            </div>
-            <div></div>
-        </div>
-
-        <div class="featured-2">
-            <div class="head-2">
-                <h1>Featured Deep Discounts</h1>
-                <p>Don't miss out on these amazing offers!</p>
-            </div>
-            <div class="products">
-                <div class="flex-1">
-                    <div class="flex-item product">
-                        <img src="../images/battlefield2042.jpg" alt="battlefield2042">
-                        <div class="discount">
-                            <div class="discount-now">
-                                <p>25%</p>
-                            </div>
-                            <div class="price-now">
-                                <div class="diagonal-line"></div>
-                                <p class="grey-p">23,99$</p>
-                                <p class="white-p">17,99$</p>
-                            </div>
-                        </div>
-        
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/jedi.jpg" alt="jedi survivor">
-                        <div class="discount">
-                            <div class="discount-now">
-                                <p>25%</p>
-                            </div>
-                            <div class="price-now">
-                                <div class="diagonal-line"></div>
-                                <p class="grey-p">23,99$</p>
-                                <p class="white-p">17,99$</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/resident-evil.jpg" alt="resident-evil">
-                        <div class="discount">
-                            <div class="discount-now">
-                                <p>25%</p>
-                            </div>
-                            <div class="price-now">
-                                <div class="diagonal-line"></div>
-                                <p class="grey-p">23,99$</p>
-                                <p class="white-p">17,99$</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/nobody.jpg" alt="">
-                        <div class="discount">
-                            <div class="discount-now">
-                                <p>25%</p>
-                            </div>
-                            <div class="price-now">
-                                <div class="diagonal-line"></div>
-                                <p class="grey-p">23,99$</p>
-                                <p class="white-p">17,99$</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex-1 flex-2">
-                    <div class="flex-item product">
-                        <img src="../images/cod3.jpg" alt="cod6">
-                        <div class="discount">
-                            <div class="discount-now">
-                                <p>25%</p>
-                            </div>
-                            <div class="price-now">
-                                <div class="diagonal-line"></div>
-                                <p class="grey-p">23,99$</p>
-                                <p class="white-p">17,99$</p>
-                            </div>
-                        </div>
-        
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/forza.jpg" alt="forza">
-                        <div class="discount">
-                            <div class="discount-now">
-                                <p>25%</p>
-                            </div>
-                            <div class="price-now">
-                                <div class="diagonal-line"></div>
-                                <p class="grey-p">23,99$</p>
-                                <p class="white-p">17,99$</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/hades.jpg" alt="hades">
-                        <div class="discount">
-                            <div class="discount-now">
-                                <p>25%</p>
-                            </div>
-                            <div class="price-now">
-                                <div class="diagonal-line"></div>
-                                <p class="grey-p">23,99$</p>
-                                <p class="white-p">17,99$</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <div class="flex-item product">
-                        <img src="../images/horizon.jpg" alt="horizon">
-                        <div class="discount">
-                            <div class="discount-now">
-                                <p>25%</p>
-                            </div>
-                            <div class="price-now">
-                                <div class="diagonal-line"></div>
-                                <p class="grey-p">23,99$</p>
-                                <p class="white-p">17,99$</p>
-                            </div>
-                        </div>
-        
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/terraria.jpg" alt="terraria">
-                        <div class="discount">
-                            <div class="discount-now">
-                                <p>25%</p>
-                            </div>
-                            <div class="price-now">
-                                <div class="diagonal-line"></div>
-                                <p class="grey-p">23,99$</p>
-                                <p class="white-p">17,99$</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/warhammer.jpg" alt="warhammer">
-                        <div class="discount">
-                            <div class="discount-now">
-                                <p>25%</p>
-                            </div>
-                            <div class="price-now">
-                                <div class="diagonal-line"></div>
-                                <p class="grey-p">23,99$</p>
-                                <p class="white-p">17,99$</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/it-takes-two.jpg" alt="">
-                        <div class="discount">
-                            <div class="discount-now">
-                                <p>25%</p>
-                            </div>
-                            <div class="price-now">
-                                <div class="diagonal-line"></div>
-                                <p class="grey-p">23,99$</p>
-                                <p class="white-p">17,99$</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex-1 flex-2">
-                    <div class="flex-item product">
-                        <img src="../images/fifa.jpg" alt="cod6">
-                        <div class="discount">
-                            <div class="discount-now">
-                                <p>25%</p>
-                            </div>
-                            <div class="price-now">
-                                <div class="diagonal-line"></div>
-                                <p class="grey-p">23,99$</p>
-                                <p class="white-p">17,99$</p>
-                            </div>
-                        </div>
-        
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/mass-efect.jpg" alt="forza">
-                        <div class="discount">
-                            <div class="discount-now">
-                                <p>25%</p>
-                            </div>
-                            <div class="price-now">
-                                <div class="diagonal-line"></div>
-                                <p class="grey-p">23,99$</p>
-                                <p class="white-p">17,99$</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-item product">
-                        <img src="../images/outer-wilds.jpg" alt="hades">
-                        <div class="discount">
-                            <div class="discount-now">
-                                <p>25%</p>
-                            </div>
-                            <div class="price-now">
-                                <div class="diagonal-line"></div>
-                                <p class="grey-p">23,99$</p>
-                                <p class="white-p">17,99$</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </main>
-    <footer>
-        <div class="info">
-            <div class="footer-image">
-                <img src="../images/valve-logo.jpg" alt="example-logo">
-            </div>
-            <div class="footer-p">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque</p>
-                <div class="p-link">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque</p>
-                    <div class="links">
-                        <a href="../Home/home.html">Home</a>
-                        <a href="../Categories/Categories.html">Categories</a>
-                        <a href="../About/about.html">About us</a>
-                        <a href="../Contact-us/faq.html">Contact us</a>
-                    </div>
-                </div>
-            </div>
-            <div class="socials">
-                <img src="../images/facebook-logo-removebg-preview.png" alt="facebook-logo">
-                <img src="../images/insta2-removebg-preview.png" alt="twitter-logo">
-                <img src="../images/twitter.png" alt="instagram-logo" id="twitter">
-            </div>
-        </div>
-    </footer>
-    <script src="../Home/home.js"></script>
-    <script src="../general-functions/functions.js"></script>
-</body>
-</html> -->
 
 
 <!DOCTYPE html>
@@ -310,6 +21,7 @@
 
 <?php } ?>
 <body>
+    <div class="overlay"></div>
     <div class="loginSignupPop">
         <div class="lS login-click">
             <p>Log in</p>
@@ -318,18 +30,17 @@
         <div class="lS signup-click">
             <p>Signup</p>
         </div>
-        <div class="triangle"></div>
     </div>
     <div class="cart-notification-circle">
         <p class="cart-notification-p"></p>
     </div>
     <header class="header">
         <div class="logo">
-            <img src="#" alt="logo-img" id="logo1">
+            <img src="../images/GameNexusLogo.png" alt="logo-img" id="logo1">
         </div>
         <nav class="right">
-            <a href="../Home/home.html">home</a>
-            <a href="../Categories/Categories.html">categories</a>
+            <a href="../Home/home.php">home</a>
+            <a href="../Categories/Categories.php">categories</a>
             <a href="../About/about.html">About us</a>
             <a href="../Contact-us/faq.php">Contact us</a>
         </nav>
@@ -380,7 +91,7 @@
 
         <div class="featured-2">
             <div class="head-2">
-                <h1>Featured Deep Discounts</h1>
+                <h1 class="fdd">Featured Deep Discounts</h1>
                 <p>Don't miss out on these amazing offers!</p>
             </div>
             <div class="products">
@@ -415,13 +126,9 @@
                                 <img src="../images/' . $image . '" alt="' . htmlspecialchars($product['name']) . '" class="imazhet">
                             </a>
                                 <div class="discount">
-                                    <div class="discount-now">
-                                        <p>25%</p>
-                                    </div>
                                     <div class="price-now">
-                                        <div class="diagonal-line"></div>
-                                        <p class="grey-p">$' . $price . '</p>
-                                        <p class="white-p">$' . number_format($product['price'] * 0.75, 2) . '</p>
+                                  
+                                        <p class="white-p">$' . $price . '</p>
                                     </div>
                                 </div>
                             </div>';
@@ -457,25 +164,24 @@
 
     <footer>
         <div class="info">
-            <div class="footer-image">
+            <!-- <div class="footer-image">
                 <img src="../images/valve-logo.jpg" alt="example-logo">
-            </div>
+            </div> -->
             <div class="footer-p">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque</p>
+                <p>© 2025 GameStore Inc. All rights reserved.</p>
                 <div class="p-link">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et neque</p>
                     <div class="links">
-                        <a href="../Home/home.html">Home</a>
-                        <a href="../Categories/Categories.html">Categories</a>
+                        <a href="../Home/home.php">Home</a>
+                        <a href="../Categories/Categories.php">Categories</a>
                         <a href="../About/about.html">About us</a>
-                        <a href="../Contact-us/faq.html">Contact us</a>
+                        <a href="../Contact-us/faq.php">Contact us</a>
                     </div>
                 </div>
             </div>
             <div class="socials">
-                <img src="../images/facebook-logo-removebg-preview.png" alt="facebook-logo">
-                <img src="../images/insta2-removebg-preview.png" alt="twitter-logo">
-                <img src="../images/twitter.png" alt="instagram-logo" id="twitter">
+                <img id="facebook" src="../images/facebook-logo-removebg-preview.png" alt="facebook-logo">
+                <img id="instagram" src="../images/insta2-removebg-preview.png" alt="twitter-logo">
+                <img id="twitter" src="../images/twitter.png" alt="instagram-logo" id="twitter">
             </div>
         </div>
     </footer>

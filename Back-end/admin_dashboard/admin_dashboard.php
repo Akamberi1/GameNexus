@@ -1,6 +1,10 @@
 <?php
 session_start();
 @include '../config.php';
+if (!isset($_SESSION['user_id'])) {
+  header("Location: ../../Front-end/Login/login.html");
+  exit;
+}
 
 class Database {
     private $host = "localhost";
@@ -94,7 +98,7 @@ $totalReviews = $dashboard->getCount('reviews');
             <a href="../../Front-end/Categories/Categories.php"><i class="fa-solid fa-list"></i> Categories</a>
           </li>
           <li class="sidebar-list-item">
-            <a href="../../Front-end/Contact-us/faq.html"><i class="fa-solid fa-address-book"></i> Contact Us</a>
+            <a href="../Contact/viewContacts.php"><i class="fa-solid fa-address-book"></i> Contact Us</a>
           </li>
           <li class="sidebar-list-item">
             <a href="../../Front-end/About/about.html"><i class="fa-solid fa-address-card"></i>  About</a>
