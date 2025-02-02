@@ -1,6 +1,65 @@
 <?php
 session_start();
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $database = new Database();
+    $db = $database->getConnection();
+    $user = new User($db);
+
+    $user->username = trim($_POST["username"]);
+    $user->email = trim($_POST["email"]);
+    $confirm_email = trim($_POST["confirm-email"]);
+    $user->password = $_POST["password"];
+    $user->role = isset($_POST["role"]) && in_array($_POST["role"], ["admin", "user"]) ? $_POST["role"] : "user";
+
+    // Regex patterns (same as in JavaScript)
+    $usernameRegex = "/^(?!.*\s)[a-zA-Z0-9]{3,20}$/";
+    $passwordRegex = "/^(?!.*\s)(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/";
+    $emailRegex = "/^[^\s@]+@[^\s@]+\.[^\s@]+$/";
+
+    // Server-side validation
+    if (empty($user->username) || !preg_match($usernameRegex, $user->username)) {
+        $_SESSION["error"] = "Username must be 3-20 characters long and contain only letters and numbers (no whitespace)!";
+        header("Location: ../Register/registration-form.php");
+        exit();
+    }
+
+    if (empty($user->email) || !preg_match($emailRegex, $user->email)) {
+        $_SESSION["error"] = "Invalid email format. Make sure it includes '@' and a domain (e.g., '.com').";
+        header("Location: ../Register/registration-form.php");
+        exit();
+    }
+
+    if ($user->email !== $confirm_email) {
+        $_SESSION["error"] = "Email addresses do not match!";
+        header("Location: ../Register/registration-form.php");
+        exit();
+    }
+
+    if (empty($user->password) || !preg_match($passwordRegex, $user->password)) {
+        $_SESSION["error"] = "Password must be at least 8 characters long and contain at least one letter and one number (no whitespace)!";
+        header("Location: ../Register/registration-form.php");
+        exit();
+    }
+
+    if ($user->exists()) {
+        $_SESSION["error"] = "An account with this username or email already exists.";
+        header("Location: ../Register/registration-form.php");
+        exit();
+    }
+
+    if ($user->register()) {
+        $_SESSION["success"] = "Registration successful!";
+        header("Location: ../Login/login.html");
+        exit();
+    } else {
+        $_SESSION["error"] = "Registration failed. Please try again.";
+        header("Location: ../Register/registration-form.php");
+        exit();
+    }
+}
+
+
 class Database {
     private $host = 'localhost';
     private $db_name = 'GameNexus';
