@@ -4,8 +4,14 @@ body {
     box-sizing: border-box;
     background-color: #1b2a3d;
     color: rgb(70, 71, 81);
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans';
   }
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('../Fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype'); /* Adjust the path */
+    font-weight: normal;
+    font-style: normal;
+}
   .fa-solid{
     color: whitesmoke;
   }

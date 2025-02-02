@@ -6,7 +6,13 @@ body {
     color: #c7d5e0;
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans';
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../Fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype'); /* Adjust the path */
+    font-weight: normal;
+    font-style: normal;
 }
 
 header {

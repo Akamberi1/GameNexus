@@ -7,7 +7,7 @@
 body {
     min-height: 100vh;
     background-color: #1b2a3d;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', Arial;
 }
 
 @font-face {
