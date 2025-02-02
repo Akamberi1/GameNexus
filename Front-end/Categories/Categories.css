@@ -7,10 +7,15 @@
 body {
     min-height: 100vh;
     background-color: #1b2a3d;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans';
 }
 
-
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../Fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype'); /* Adjust the path */
+    font-weight: normal;
+    font-style: normal;
+}
 header {
     width: 100vw;
     height: 10vh;

@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($user->role === "admin") {
             header("Location: ../Login/login.html");
         } else {
-            header("Location: ../Login/login.html");
+            header("Location: ../Register/registration-form.php");
         }
         exit();
     } else {

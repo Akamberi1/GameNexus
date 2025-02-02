@@ -1,5 +1,3 @@
-let registerButton = document.getElementsByClassName("btn-submit");
-
 registerButton[0].addEventListener("click", (event) => {
     event.preventDefault();
 
@@ -68,6 +66,13 @@ registerButton[0].addEventListener("click", (event) => {
         return false;
     }
 
+    // Check role selection
+    if (roles.value === "") {
+        alert("Please select a role (Admin or User).");
+        roles.focus();
+        return false;
+    }
+
     console.log("Registration Successful!");
     console.log("Username:", username.value);
     console.log("Email:", email.value);
@@ -80,22 +85,3 @@ registerButton[0].addEventListener("click", (event) => {
     window.location.href = "../Login/login.html";
     registrationForm.reset();
 });
-
-document.addEventListener("DOMContentLoaded", function() {
-    let registerButton = document.querySelector(".btn-submit");
-
-    registerButton.addEventListener("click", (event) => {
-        event.preventDefault();
-
-        const roles = document.getElementById("select-role");
-
-        if (roles.value === "") {
-            alert("Please select a role (Admin or User).");
-            roles.focus();
-            return false;
-        }
-
-        document.getElementById("loginForm").submit();
-    });
-});
-
