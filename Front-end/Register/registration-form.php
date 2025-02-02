@@ -95,6 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4acdbd152b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../Register/registration-form.css">
     <style>
@@ -130,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <header class="header">
         <div class="logo">
-            <img src="../assets/logo.png" alt="logo-img" id="logo1">
+            <a href="../Home/home.php"><img src="../images/gamenexus-logo.png" alt="logo-img" id="logo1"></a>
         </div>
         <nav class="right">
             <a href="../Home/home.php">Home</a>
