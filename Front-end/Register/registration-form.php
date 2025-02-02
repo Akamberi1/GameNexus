@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($user->email !== $confirm_email) {
         $_SESSION["error"] = "Email addresses do not match!";
-        header("Location: ../Register/registration-form.php");
+        header("Location: ../Register/register.php");
         exit();
     }
 
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($user->exists()) {
         $_SESSION["error"] = "An account with this username or email already exists.";
-        header("Location: ../Register/registration-form.php");
+        header("Location: ../Register/register.php");
         exit();
     }
     
@@ -84,13 +84,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         $_SESSION["error"] = "Registration failed. Please try again.";
-        header("Location: ../Register/registration-form.php");
+        header("Location: ../Register/register.php");
         exit();
     }
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,11 +130,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <header class="header">
         <div class="logo">
-            <a href="../Home/home.php"><img src="../images/gamenexus-logo.png" alt="logo-img" id="logo1"></a>
+            <img src="../assets/logo.png" alt="logo-img" id="logo1">
         </div>
         <nav class="right">
-            <a href="../Home/home.php">home</a>
-            <a href="../Categories/Categories.php">categories</a>
+            <a href="../Home/home.php">Home</a>
+            <a href="../Categories/Categories.php">Categories</a>
             <a href="../About/about.html">About us</a>
             <a href="../Contact-us/faq.php">Contact us</a>
         </nav>
@@ -144,7 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section class="container">
         <section class="form-container">
             <h2>CREATE YOUR ACCOUNT</h2>
-            <form id="loginForm" action="#" method="POST">
+            <form id="loginForm" action="registration-form.php" method="POST" enctype="multipart/form-data">
 
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username" placeholder="Username">
@@ -169,7 +167,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <label for="select-country">Country of Residence</label>
             <select name="country" id="select-country">
-            <option value="" disabled selected>--Select Your Country-</option>
                 <option value="Albania">Albania</option>
                 <option value="Argentina">Argentina</option>
                 <option value="Belgium">Belgium</option>
@@ -202,31 +199,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="checkbox" name="terms" id="agree-terms"> I am 13 years of age or older and agree to the terms of the <a href="#">Steam Subscriber Agreement</a> and the <a href="#">Valve Privacy Policy</a>.
             </div>
 
-            <button class="btn-submit" type="submit">Continue</a></button>
+            <button class="btn-submit" type="submit">Continue</button>
             </form>
-            <?php if (isset($_SESSION["error"])): ?>
-    <div class="popup error show" id="popup">
-        <?php echo $_SESSION["error"]; ?>
-    </div>
-    <?php unset($_SESSION["error"]); ?> 
-<?php endif; ?>
+            <?php if (isset($_SESSION["success"])): ?>
+        <div class="popup success show" id="popup">
+            <?php echo $_SESSION["success"]; unset($_SESSION["success"]); ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if (isset($_SESSION["error"])): ?>
+        <div class="popup error show" id="popup">
+            <?php echo $_SESSION["error"]; unset($_SESSION["error"]); ?>
+        </div>
+    <?php endif; ?>
 
         </section>
     </section>
     <script src="../Register/registration-form.js"></script>
     <script>
         window.onload = function() {
-        const popup = document.querySelector('.popup');
-        if (popup) {
-            popup.classList.add('show');
-            setTimeout(() => {
-                popup.classList.remove('show');
-                <?php if ($_SESSION["success"]) : ?>
-                    window.location.href = "../Login/login.html"; 
-                <?php else : ?>
-                <?php endif; ?>
-            }, 3000); 
-    };
+            const popup = document.querySelector('.popup');
+            if (popup) {
+                popup.classList.add('show'); 
+            }
+        };
+
+        setTimeout(() => {
+            const popup = document.querySelector('.popup');
+            if (popup) {
+                popup.classList.remove('show');  
+            }
+        }, 3000);
     </script>
 </body>
 </html>
